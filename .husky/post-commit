@@ -1,5 +1,6 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-echo "Pushing to remote repository..."
+echo "🚀 Pushing to remote repository 🚀"
+
 git push
