@@ -11,8 +11,10 @@
 		"dist"
 	],
 	"scripts": {
-		"rollup": "rollup -c",
-		"prepare": "husky install"
+		"build": "rollup -c",
+		"prepare": "husky install",
+		"check-lint": "eslint . --ext ts --ext tsx --ext js",
+		"check-types": "tsc --pretty --noEmit"
 	},
 	"devDependencies": {
 		"@eslint/eslintrc": "^3.0.2",
