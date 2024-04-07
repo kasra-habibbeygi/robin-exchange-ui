@@ -1,12 +1,13 @@
 {
 	"name": "react-vitale",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "A simple library for React components.",
 	"author": "Kasra Habibbeygi",
 	"license": "MIT",
 	"main": "dist/cjs/index.js",
 	"module": "dist/esm/index.js",
 	"types": "dist/index.d.ts",
+	"type": "module",
 	"files": [
 		"dist"
 	],
@@ -19,11 +20,11 @@
 	"devDependencies": {
 		"@eslint/eslintrc": "^3.0.2",
 		"@eslint/js": "^9.0.0",
-		"@rollup/plugin-commonjs": "^21.0.1",
-		"@rollup/plugin-node-resolve": "^13.0.6",
+		"@rollup/plugin-commonjs": "^25.0.7",
+		"@rollup/plugin-node-resolve": "^15.2.3",
 		"@rollup/plugin-terser": "^0.4.4",
-		"@rollup/plugin-typescript": "^8.3.0",
-		"@types/react": "^17.0.34",
+		"@rollup/plugin-typescript": "^11.1.6",
+		"@types/react": "^18.2.74",
 		"@typescript-eslint/eslint-plugin": "^6.4.0",
 		"@typescript-eslint/parser": "^7.5.0",
 		"eslint": "^8.0.1",
@@ -40,12 +41,12 @@
 		"husky": "^9.0.11",
 		"prettier": "^3.2.5",
 		"prettier-eslint": "^16.3.0",
-		"react": "^17.0.2",
-		"rollup": "^2.60.0",
-		"rollup-plugin-dts": "^4.0.1",
+		"react": "^18.2.0",
+		"rollup": "^4.14.1",
+		"rollup-plugin-dts": "^6.1.0",
 		"rollup-plugin-minification": "^0.2.0",
 		"tslib": "^2.6.2",
-		"typescript": "*",
+		"typescript": "^5.4.4",
 		"typescript-eslint": "^7.5.0"
 	}
 }
