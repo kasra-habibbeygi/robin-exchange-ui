@@ -7,12 +7,7 @@ module.exports = {
     },
     ignorePatterns: ['dist', '.eslintrc.cjs'],
     parser: '@typescript-eslint/parser',
-    extends: [
-        'plugin:react/jsx-runtime',
-        'plugin:@typescript-eslint/recommended',
-        'eslint:recommended',
-        "prettier",
-    ],
+    extends: ['plugin:react/jsx-runtime', 'plugin:@typescript-eslint/recommended', 'eslint:recommended', 'prettier', 'plugin:storybook/recommended'],
     plugins: ['react-hooks', 'react-refresh' , 'prettier' ],
     rules: {
         "prettier/prettier": [
