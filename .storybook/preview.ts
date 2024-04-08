@@ -1,14 +1,27 @@
 import type { Preview } from "@storybook/react";
 
 const preview: Preview = {
-  parameters: {
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/i,
-      },
-    },
-  },
+	globalTypes: {
+		theme: {
+			description: 'Global theme for components',
+			defaultValue: 'light',
+			toolbar: {
+				title: 'Theme',
+				items: ['light', 'dark'],
+				dynamicTitle: true,
+			},
+		},
+		locale: {
+			description: 'Internationalization locale',
+			defaultValue: 'en',
+			toolbar: {
+				icon: 'globe',
+				items: [
+					{ value: 'en', title: 'English' },
+					{ value: 'fa', title: 'فارسی' },
+				],
+			},
+		},
+	},
 };
-
 export default preview;
