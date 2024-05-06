@@ -1,6 +1,12 @@
-import styled from 'styled-components';
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 
-export const ButtonContainer = styled.div`
-    background-color: red;
-    width: max-content;
-`;
+export const ButtonContainer = styled.div(
+    () => css`
+        color: red !important;
+
+        button {
+            color: red !important;
+        }
+    `
+);

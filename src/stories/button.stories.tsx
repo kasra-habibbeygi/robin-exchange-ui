@@ -4,13 +4,7 @@ import { Button } from '../components';
 const meta: Meta<typeof Button> = {
     component: Button,
     title: 'Design System/Form Group/Button',
-    tags: ['autodocs'],
-    argTypes: {
-        label: {
-            description: 'The text displayed on the button',
-            control: 'text'
-        }
-    }
+    tags: ['autodocs']
 };
 
 export default meta;

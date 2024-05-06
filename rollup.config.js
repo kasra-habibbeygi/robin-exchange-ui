@@ -4,6 +4,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
 import { terser } from 'rollup-plugin-minification';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 
 import packageJson from './package.json' assert { type: 'json' };
 
@@ -24,7 +25,8 @@ export default [
                 exports: 'named'
             }
         ],
-        plugins: [terser(), resolve(), commonjs(), typescript({ tsconfig: './tsconfig.json' })]
+        plugins: [terser(), resolve(), commonjs(), typescript({ tsconfig: './tsconfig.json' }), peerDepsExternal()],
+        external: Object.keys(packageJson.peerDependencies || {})
     },
     {
         input: 'src/index.ts',
