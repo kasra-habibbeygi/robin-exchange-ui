@@ -1,0 +1,21 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+PATTERN="^(feat|fix|docs|style|refactor|test|BREAKING CHANGE)(\(.*\))?: .+$"
+MSG=$(cat "$1")
+
+if ! echo "$MSG" | grep -Eq "$PATTERN"; then
+  echo -e "\033[31m Error: Commit message does not follow the required pattern \033[0m"
+  echo -e 'Please provide commit with this format:'
+  echo -e "Allowed types are:\033[34m feat, fix, docs, style, refactor, test, BREAKING CHANGE.\033[0m"
+  echo -e '\033[35m example 1=> \033[0m feat: Create some component for some page'
+  echo -e '\033[35m example 2=> \033[0m fix: fix some bugs'
+  echo -e '\033[35m example 3=> \033[0m test: component A'
+  echo -e '\033[35m example 4=> \033[0m refactor: Componen A'
+  echo -e '\033[35m example 5=> \033[0m BREAKING CHANGE: Some thing '
+  echo -e '\033[35m example 6=> \033[0m fix(login): Some thing '
+  echo -e '🫵 \033[42m Please write your commits clearly \033[0m '
+  exit 1
+fi
+
+echo '✅✅✅✅ You win this time... I am committing this now. ✅✅✅✅'

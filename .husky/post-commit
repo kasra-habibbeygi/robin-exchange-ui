@@ -1,6 +1,10 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+echo "🧲 Pulling from remote repository 🧲"
+
+git pull
+
 echo "🚀 Pushing to remote repository 🚀"
 
 git push

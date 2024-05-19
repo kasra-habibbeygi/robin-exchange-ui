@@ -1,6 +1,10 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+echo '❌ kill 3000 port for running test and build ❌ '
+
+timeout 30 npx kill-port 3000
+
 echo '🏗️👷 Styling, testing and building your project before committing'
 
 npm run check-lint ||
@@ -26,5 +30,3 @@ yarn build ||
     '
     false;
 )
-
-echo '✅✅✅✅ You win this time... I am committing this now. ✅✅✅✅'

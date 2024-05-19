@@ -13,7 +13,7 @@
 	],
 	"scripts": {
 		"build": "rollup -c",
-		"prepare": "husky install",
+		"prepare": "husky",
 		"check-lint": "eslint . --ext ts --ext tsx --ext js",
 		"check-types": "tsc --pretty --noEmit",
 		"storybook": "storybook dev -p 6006",
