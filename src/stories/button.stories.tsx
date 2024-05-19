@@ -11,8 +11,8 @@ export default meta;
 type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
-    name: 'I am the primary',
+    name: 'Button',
     args: {
-        label: 'Default Label' // Provide a default value for the label
+        children: 'button'
     }
 };
