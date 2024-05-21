@@ -1,13 +1,20 @@
 {
 	"name": "react-vitale",
-	"version": "0.0.25",
+	"version": "0.0.26",
 	"description": "A simple library for React components.",
 	"author": "Kasra Habibbeygi",
 	"license": "MIT",
-	"main": "dist/cjs/index.js",
-	"module": "dist/esm/index.js",
-	"types": "dist/index.d.ts",
+	"main": "dist/core/index.js",
+	"module": "dist/core/index.esm.js",
+	"types": "dist/core/index.d.ts",
 	"type": "module",
+	"exports": {
+		"./core": {
+			"import": "./dist/core/index.esm.js",
+			"require": "./dist/core/index.js",
+			"types": "./dist/core/index.d.ts"
+		}
+	},
 	"files": [
 		"dist"
 	],

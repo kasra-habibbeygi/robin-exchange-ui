@@ -1,4 +1,3 @@
-'use client';
 // Assets
 import { ChangeEvent, FC, ReactNode } from 'react';
 import { CheckboxContainer } from './checkbox.style';

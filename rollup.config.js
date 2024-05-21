@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
@@ -9,17 +8,18 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import packageJson from './package.json' assert { type: 'json' };
 
 export default [
+    // Core bundle
     {
-        input: 'src/index.ts',
+        input: 'src/core/index.ts',
         output: [
             {
-                file: packageJson.main,
+                file: 'dist/core/index.js',
                 format: 'cjs',
                 sourcemap: true,
                 exports: 'named'
             },
             {
-                file: packageJson.module,
+                file: 'dist/core/index.esm.js',
                 format: 'esm',
                 sourcemap: true,
                 exports: 'named'
@@ -28,9 +28,10 @@ export default [
         plugins: [terser(), resolve(), commonjs(), typescript({ tsconfig: './tsconfig.json' }), peerDepsExternal()],
         external: Object.keys(packageJson.peerDependencies || {})
     },
+    // Types
     {
-        input: 'src/index.ts',
-        output: [{ file: 'dist/index.d.ts', format: 'es' }],
+        input: 'src/core/index.ts',
+        output: [{ file: 'dist/core/index.d.ts', format: 'es' }],
         plugins: [dts()]
     }
 ];
