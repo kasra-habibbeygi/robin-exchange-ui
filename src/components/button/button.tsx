@@ -8,7 +8,13 @@ import { ButtonContainer } from './button.style';
 import { CircularProgress } from '@mui/material';
 
 export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
+    /**
+     * You must definitely provide a child for the button. The child can be anything, ranging from a string to composite HTML elements.
+     */
     children: ReactNode;
+    /**
+     * If you need a loading indicator inside the button, enable this property.
+     */
     loading?: boolean;
     variant?: 'outline' | 'filled' | 'ghost';
     radius?: 'normal' | 'rounded' | 'sharp';
@@ -28,8 +34,7 @@ const Button: FC<ButtonProps> = ({
     color = 'accent',
     disabled = false,
     type = 'button',
-    onClick = null,
-    ...props
+    onClick = null
 }) => {
     return (
         <ButtonContainer
@@ -37,7 +42,6 @@ const Button: FC<ButtonProps> = ({
             disabled={loading || disabled}
             type={type}
             {...(onClick && { onClick })}
-            {...props}
         >
             {loading ? <CircularProgress className='loader-field' /> : children}
         </ButtonContainer>
