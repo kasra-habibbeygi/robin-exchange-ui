@@ -13,6 +13,7 @@ type Story = StoryObj<typeof Pagination>;
 export const Primary: Story = {
     name: 'Pagination',
     args: {
-        totalPages: 20
+        totalPages: 20,
+        getCurrentPageFromURL: true
     }
 };

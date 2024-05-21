@@ -1,5 +1,5 @@
 // Assets
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { PaginationContainer } from './pagination.style';
 
 // MUI
@@ -36,10 +36,20 @@ interface IPagination {
      * Do you want a "Jump to the Last page" button?
      */
     JumpToLastPage?: boolean;
+    /**
+     * If you include the value of the main page in the query within the URL, you can use these props. It should be noted
+     * that your query name must be equal to "page," and then boom 💣
+     */
+    getCurrentPageFromURL?: boolean;
     variant?: 'outline' | 'filled' | 'ghost';
     radius?: 'normal' | 'rounded' | 'sharp';
     color?: 'accent' | 'normal';
 }
+
+const getQueryParams = () => {
+    const url = new URL(window.location.href);
+    return new URLSearchParams(url.search).get('page');
+};
 
 const Pagination: FC<IPagination> = ({
     onChange,
@@ -52,8 +62,20 @@ const Pagination: FC<IPagination> = ({
     JumpToLastPage = false,
     variant = 'outline',
     radius = 'normal',
-    color = 'accent'
+    color = 'accent',
+    getCurrentPageFromURL = false
 }) => {
+    const [page, setPage] = useState<number | null>(null);
+
+    useEffect(() => {
+        if (getCurrentPageFromURL) {
+            const queryPage = getQueryParams();
+            if (queryPage) {
+                setPage(parseInt(queryPage, 10));
+            }
+        }
+    }, [getCurrentPageFromURL]);
+
     return (
         <PaginationContainer className={`${variant} ${radius}-radius ${color}-color`}>
             <MUIPagination
@@ -61,7 +83,7 @@ const Pagination: FC<IPagination> = ({
                 size={size}
                 siblingCount={siblingCount}
                 boundaryCount={boundaryCount}
-                page={currentPage}
+                page={getCurrentPageFromURL ? page! : currentPage}
                 onChange={(_, page) => onChange(page)}
                 showFirstButton={jumpToFirstPage}
                 showLastButton={JumpToLastPage}
