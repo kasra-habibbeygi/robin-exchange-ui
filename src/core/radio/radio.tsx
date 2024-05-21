@@ -15,7 +15,7 @@ interface IRadioButtonGroup {
         value: string;
         disabled: boolean;
     }[];
-    onChange: () => void;
+    onChange: (value: string) => void;
     value: string;
     name: string;
     className?: string;
@@ -25,7 +25,7 @@ interface IRadioButtonGroup {
 const RadioButtonGroup: FC<IRadioButtonGroup> = ({ items, onChange, value, className, name, color = 'accent' }) => {
     return (
         <RadioGroupContainer className={`${className ? className : ''} ${color}-color`}>
-            <RadioGroup onChange={onChange} value={value} name={name}>
+            <RadioGroup onChange={(_, value) => onChange(value)} value={value} name={name}>
                 {items.map((item, index) => (
                     <FormControlLabel key={`radio-${index}-${name}`} value={item.value} control={<Radio />} label={item.title} />
                 ))}
