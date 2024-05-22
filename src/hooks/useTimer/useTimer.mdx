@@ -1,0 +1,43 @@
+# Custom Hook - useTimer
+
+You can use this hook to create a timer that provides you with the values for days, hours, minutes, and seconds.
+
+## Usage
+First, import the hook using named import:
+
+```jsx
+import { useTimer } from 'react-vitale/hooks';
+
+const { days, hours, minutes, seconds, setNewCountDown } = useTimer(0);
+```
+
+As input, you can provide a number which is a timestamp.
+
+**Timestamp Format :**
+Suppose you want to set your timer to 2 days ahead. To do this, you need to subtract the current timestamp from 2 days in the future and pass it to the custom hook.
+
+**What Is setNewCountDown**
+You can use this to set the time instead of directly passing the timestamp to the hook at the time of mount.
+
+**Example :**
+
+```jsx
+import { useTimer } from 'react-vitale/hooks';
+
+
+const Timer = () => {
+    let twoDaysLater = new Date();
+    twoDaysLater.setDate(today.getDate() + 2);
+
+    const { days, hours, minutes, seconds } = useTimer(twoDaysLater.getTime());
+
+    return (
+        <div>
+            <span>{days} : </span>
+            <span>{hours} : </span>
+            <span>{minutes} : </span>
+            <span>{seconds} : </span>
+        </div>
+    )
+}
+```

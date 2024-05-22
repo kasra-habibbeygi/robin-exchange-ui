@@ -26,7 +26,7 @@ interface ITooltip {
 const Tooltip: FC<ITooltip> = ({ placement = 'top', title, children, arrow = false }) => {
     return (
         <TooltipContainer>
-            <HtmlTooltip open arrow={arrow} placement={placement} title={<Fragment>{title}</Fragment>}>
+            <HtmlTooltip arrow={arrow} placement={placement} title={<Fragment>{title}</Fragment>}>
                 {children}
             </HtmlTooltip>
         </TooltipContainer>

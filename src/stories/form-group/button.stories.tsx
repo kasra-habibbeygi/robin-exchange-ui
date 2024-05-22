@@ -16,3 +16,7 @@ export const Primary: Story = {
         children: 'button'
     }
 };
+
+export const Docs = () => {
+    return <div>Use Timer Documentation</div>;
+};
