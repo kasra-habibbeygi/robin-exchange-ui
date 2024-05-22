@@ -1,0 +1,56 @@
+# Using the useOutsideClick Hook
+
+You can use this hook when you want something to happen when you click outside of a specified element.
+
+For example, suppose you want to create a `DropDown`. You need to close the menu when user click out side the menu.
+
+
+
+## Usage of the hook
+
+First, import the hook using named import:
+
+```js
+import { useOutsideClick } from 'react-vitale/hooks';
+```
+
+This custom hook returns three things: state, setState and ref. It does not take any inputs.
+
+**Note :** You can name the returned values anything you want and use them accordingly.
+
+**Description of state :**
+Returns true or false and can be used to manage the open/close state of an element or for any other purpose.
+
+**Description of setState :**
+Can be used to set the value of state.
+
+**Description of ref :**
+Used to reference an element so that the custom hook knows where the outside click occurs.
+
+### **Example**
+Suppose I want to create a bell icon that when clicked, displays a dropdown containing notifications. The dropdown should close when you click outside of it or when you click the bell icon again.
+
+```js
+import { useOutsideClick } from 'react-vitale/hooks';
+
+const Notification = () => {
+    const [notifDropDownState, setNotifDropDownState, notifRef] = useOutsideClick();
+
+    return (
+        <div ref={notifRef}>
+            <Bell onClick={() => setNotifDropDownState(!notifDropDownState)} />
+            <div className={`${notifDropDownState ? 'active' : ''}`}>
+                <div>
+                    <p>Your Identity Verification is Approved</p>
+                    <small>
+                        Congratulations
+                    </small>
+                </div>
+                <Link href='/' className='see_more'>
+                    View More <Angle />
+                </Link>
+            </div>
+        </div>
+    );
+}
+```
