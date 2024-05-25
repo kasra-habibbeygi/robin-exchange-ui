@@ -1,0 +1,30 @@
+# useOnScreen Hook
+
+This custom hook returns a boolean value that indicates whether an element is in view on the page or not.
+
+## Usage
+
+**Note :** The hook does not cause frequent re-renders, thereby maintaining good performance for your application.
+
+First, import the hook using named import:
+
+
+```js
+import { useOutsideClick } from 'react-vitale/hooks';
+```
+
+This hook requires a ref as input from you, which points to the element you want to know whether it is present on the page or not.
+
+```js
+import { useRef, useState } from 'react';
+import { useOutsideClick } from 'react-vitale/hooks';
+
+const Test = () => {
+    const ref = useRef(null);
+    const isVisible = useOnScreen(ref);
+
+    return (
+        <p ref={ref}>ref</p>
+    )
+}
+```
