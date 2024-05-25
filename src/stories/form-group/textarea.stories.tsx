@@ -14,6 +14,7 @@ export const Primary: Story = {
     name: 'Textarea',
     args: {
         label: 'Test',
-        placeholder: 'Test'
+        placeholder: 'Test',
+        variant: 'outline'
     }
 };
