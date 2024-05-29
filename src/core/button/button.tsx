@@ -7,7 +7,7 @@ import { ButtonContainer } from './button.style';
 // MUI
 import { CircularProgress } from '@mui/material';
 
-export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
     /**
      * You must definitely provide a child for the button. The child can be anything, ranging from a string to composite HTML elements.
      */
