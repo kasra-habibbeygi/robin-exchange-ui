@@ -24,42 +24,33 @@ export const TextAreaContainer = styled.div(
             font-family: 'Product Sans';
             font-size: 16px;
             transition: all linear 0.2s;
-            border: none;
             border: 1px solid transparent;
+            outline: none;
+        }
+
+        .filled {
+            background-color: #f5f5f5;
 
             &:focus {
-                outline: none;
+                border: 1px solid #ffd335;
             }
         }
 
-        &.filled {
-            textarea {
-                background-color: #f5f5f5;
+        .shadow {
+            box-shadow:
+                rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+                rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 
-                &:focus {
-                    border: 1px solid #ffd335;
-                    outline: none;
-                }
+            &:focus {
+                border: 1px solid #ffd335;
             }
         }
 
-        &.ghost {
-            textarea {
-                &:focus {
-                    border: 1px solid #ffd335;
-                    outline: none;
-                }
-            }
-        }
+        .outline {
+            border: 1px solid #d9d9d9;
 
-        &.outline {
-            textarea {
-                border: 1px solid #d9d9d9;
-
-                &:focus {
-                    border: 1px solid #ffd335;
-                    outline: none;
-                }
+            &:focus {
+                border: 1px solid #ffd335;
             }
         }
     `

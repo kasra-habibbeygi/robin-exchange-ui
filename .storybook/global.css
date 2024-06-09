@@ -40,6 +40,10 @@
     src: local('Product Sans Black'), local('ProductSans-Black'), url(https://fonts.gstatic.com/s/productsans/v9/N0c8y_dasvG2CzM7uYqPLtDLwwZd-mS_8JqJ_KGXwxs.woff2) format('woff2');
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Product Sans';
 }

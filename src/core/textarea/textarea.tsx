@@ -11,14 +11,21 @@ interface ITextarea {
     name: string;
     value: string;
     onChange: (e: ChangeEvent<HTMLTextAreaElement>) => void;
-    variant?: 'filled' | 'outline' | 'ghost';
+    variant?: 'filled' | 'outline' | 'shadow';
 }
 
 const Textarea: FC<ITextarea> = ({ label, className, placeholder, onChange, name, value, variant = 'outline' }) => {
     return (
-        <TextAreaContainer className={`${className ? className : ''} ${variant}`}>
+        <TextAreaContainer className={`${className ? className : ''}`}>
             {label && <label htmlFor={name}>{label}</label>}
-            <textarea name={name} id={name} value={value} onChange={e => onChange(e)} placeholder={placeholder}></textarea>
+            <textarea
+                className={variant}
+                name={name}
+                id={name}
+                value={value}
+                onChange={e => onChange(e)}
+                placeholder={placeholder}
+            ></textarea>
         </TextAreaContainer>
     );
 };
