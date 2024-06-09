@@ -46,6 +46,7 @@ const Accordion: FC<IAccordion> = ({ className, dataList, disabledKey, defaultEx
         <>
             {dataList.map((item, index) => (
                 <AccordionContainer
+                    key={`accordion-item-${index}`}
                     className={className ?? ''}
                     contentHeight={activeQuestionIndex === index ? height : 0}
                     lastOne={dataList.length === index + 1}

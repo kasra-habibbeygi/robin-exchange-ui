@@ -14,6 +14,7 @@
     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
     "emmet.triggerExpansionOnTab": true,
     "cSpell.words": [
-        "splitted"
+        "splitted",
+        "svgr"
     ],
 }
