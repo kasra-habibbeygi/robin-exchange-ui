@@ -3,6 +3,7 @@ import { FC, ReactNode, useEffect, useState } from 'react';
 
 // Assets
 import { AccordionContainer } from './accordion.style';
+import { Angle } from '../../icons/main';
 
 // Types
 export interface IAccordion {
@@ -15,13 +16,14 @@ export interface IAccordion {
      */
     disabledKey?: number[];
     className?: string;
+    icon?: ReactNode | boolean;
     dataList: {
         title: ReactNode;
         content: ReactNode;
     }[];
 }
 
-const Accordion: FC<IAccordion> = ({ className, dataList, disabledKey, defaultExpanded = null }) => {
+const Accordion: FC<IAccordion> = ({ className, dataList, disabledKey, defaultExpanded = null, icon = true }) => {
     const [activeQuestionIndex, setActiveQuestionIndex] = useState<number | null>(null);
     const [height, setHeight] = useState<number>(0);
 
@@ -51,9 +53,11 @@ const Accordion: FC<IAccordion> = ({ className, dataList, disabledKey, defaultEx
                     contentHeight={activeQuestionIndex === index ? height : 0}
                     lastOne={dataList.length === index + 1}
                     disabled={disabledKey?.includes(index) ?? null}
+                    active={activeQuestionIndex === index}
                 >
                     <div onClick={() => onAccordionClickHandler(index)} className='title'>
                         {item.title}
+                        {typeof icon === 'boolean' ? <Angle /> : icon}
                     </div>
                     <div className='content'>
                         <div id={`value_text_${index}`}>{item.content}</div>

@@ -18,6 +18,7 @@ export const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => <To
             font-size: 14px;
             box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
             padding: 10px;
+            line-height: 22px;
 
             p {
                 margin: 0;

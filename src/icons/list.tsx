@@ -10,13 +10,6 @@ import CheckCircle from './main/CheckCircle';
 import Cross from './main/Cross';
 import CrossCircle from './main/CrossCircle';
 import FileInfo from './main/FileInfo';
-import OutlineCheck from './main/OutlineCheck';
-import OutlineCross from './main/OutlineCross';
-import OutlineEnvelope from './main/OutlineEnvelope';
-import OutlineHome from './main/OutlineHome';
-import OutlineMenuBurger from './main/OutlineMenuBurger';
-import OutlineSearch from './main/OutlineSearch';
-import OutlineUser from './main/OutlineUser';
 
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
@@ -195,83 +188,6 @@ const AllIcons = () => (
                 <Button variant='ghost'>
                     <FileInfo />
                     <P>FileInfo</P>
-                </Button>
-            </li>
-
-            <li
-                onClick={() => {
-                    navigator.clipboard.writeText('<OutlineCheck />');
-                }}
-            >
-                <Button variant='ghost'>
-                    <OutlineCheck />
-                    <P>OutlineCheck</P>
-                </Button>
-            </li>
-
-            <li
-                onClick={() => {
-                    navigator.clipboard.writeText('<OutlineCross />');
-                }}
-            >
-                <Button variant='ghost'>
-                    <OutlineCross />
-                    <P>OutlineCross</P>
-                </Button>
-            </li>
-
-            <li
-                onClick={() => {
-                    navigator.clipboard.writeText('<OutlineEnvelope />');
-                }}
-            >
-                <Button variant='ghost'>
-                    <OutlineEnvelope />
-                    <P>OutlineEnvelope</P>
-                </Button>
-            </li>
-
-            <li
-                onClick={() => {
-                    navigator.clipboard.writeText('<OutlineHome />');
-                }}
-            >
-                <Button variant='ghost'>
-                    <OutlineHome />
-                    <P>OutlineHome</P>
-                </Button>
-            </li>
-
-            <li
-                onClick={() => {
-                    navigator.clipboard.writeText('<OutlineMenuBurger />');
-                }}
-            >
-                <Button variant='ghost'>
-                    <OutlineMenuBurger />
-                    <P>OutlineMenuBurger</P>
-                </Button>
-            </li>
-
-            <li
-                onClick={() => {
-                    navigator.clipboard.writeText('<OutlineSearch />');
-                }}
-            >
-                <Button variant='ghost'>
-                    <OutlineSearch />
-                    <P>OutlineSearch</P>
-                </Button>
-            </li>
-
-            <li
-                onClick={() => {
-                    navigator.clipboard.writeText('<OutlineUser />');
-                }}
-            >
-                <Button variant='ghost'>
-                    <OutlineUser />
-                    <P>OutlineUser</P>
                 </Button>
             </li>
         </ul>

@@ -4,11 +4,12 @@ import styled from '@emotion/styled';
 interface IAccordionContainer {
     contentHeight: number;
     lastOne: boolean;
+    active: boolean;
     disabled: boolean | null;
 }
 
 export const AccordionContainer = styled.div<IAccordionContainer>(
-    ({ contentHeight, lastOne, disabled }) => css`
+    ({ contentHeight, lastOne, disabled, active }) => css`
         padding: 0 20px;
         border-bottom: ${lastOne ? '' : '1px solid #e5e5e5'};
         padding: 16px 0;
@@ -16,9 +17,21 @@ export const AccordionContainer = styled.div<IAccordionContainer>(
         pointer-events: ${disabled ? 'none' : 'initial'};
 
         .title {
-            font-weight: 500;
+            font-weight: 400;
             cursor: pointer;
-            font-size: 24px;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            svg {
+                min-width: 20px;
+                width: 20px;
+                height: auto;
+                margin-left: 20px;
+                transform: rotate(${active ? '90deg' : '0'});
+                transition: all 0.3s cubic-bezier(0.6, 0.24, 0.03, 0.74);
+            }
         }
 
         .content {
