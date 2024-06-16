@@ -11,6 +11,11 @@ interface IUseTimer {
 const useTimer: (targetDate: number) => IUseTimer = (targetDate = 0) => {
     const [countDown, setCountDown] = useState<number>(targetDate);
 
+    let days: number = Math.floor(countDown / (1000 * 60 * 60 * 24));
+    let hours: number = Math.floor((countDown % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes: number = Math.floor((countDown % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds: number = Math.floor((countDown % (1000 * 60)) / 1000);
+
     useEffect(() => {
         const myInterval = setInterval(() => {
             setCountDown(countDown - 1000);
@@ -24,11 +29,6 @@ const useTimer: (targetDate: number) => IUseTimer = (targetDate = 0) => {
             clearInterval(myInterval);
         };
     });
-
-    let days: number = Math.floor(countDown / (1000 * 60 * 60 * 24));
-    let hours: number = Math.floor((countDown % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let minutes: number = Math.floor((countDown % (1000 * 60 * 60)) / (1000 * 60));
-    let seconds: number = Math.floor((countDown % (1000 * 60)) / 1000);
 
     if (days < 0) {
         days = 0;

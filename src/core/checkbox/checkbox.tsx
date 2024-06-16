@@ -19,7 +19,7 @@ interface ICheckbox {
 
 const Checkbox: FC<ICheckbox> = ({ checked, label, name, onChange, subTitle, disabled = false, color = 'accent', className }) => {
     return (
-        <CheckboxContainer haveLabel={label ? true : false} className={`${className ? className : ''} ${color}-color`}>
+        <CheckboxContainer haveLabel={!!label} className={`${className ? className : ''} ${color}-color`}>
             <MUICheckbox id={name} name={name} checked={checked} onChange={onChange} size='small' disabled={disabled} />
             <div className='content'>
                 {label && <label htmlFor={name}>{label}</label>}

@@ -22,19 +22,6 @@ interface IModal {
     mobileView?: `${string}px`;
 }
 
-// This component is for implementing conditional rendering, which is essential for improving performance.
-const Modal: FC<IModal> = ({ children, maxWidth, onClose, status, blur = true, mobileView }) => {
-    return (
-        <>
-            {status && (
-                <ModalComponent maxWidth={maxWidth} onClose={onClose} status={status} blur={blur} mobileView={mobileView}>
-                    {children}
-                </ModalComponent>
-            )}
-        </>
-    );
-};
-
 const ModalComponent: FC<IModal> = ({ children, maxWidth, onClose, status, blur = true, mobileView }) => {
     const [modalStatus, closeModal] = useToggleModal(status, onClose);
 
@@ -59,6 +46,19 @@ const ModalComponent: FC<IModal> = ({ children, maxWidth, onClose, status, blur 
                     </ModalContainer>,
                     document.body
                 )}
+        </>
+    );
+};
+
+// This component is for implementing conditional rendering, which is essential for improving performance.
+const Modal: FC<IModal> = ({ children, maxWidth, onClose, status, blur = true, mobileView }) => {
+    return (
+        <>
+            {status && (
+                <ModalComponent maxWidth={maxWidth} onClose={onClose} status={status} blur={blur} mobileView={mobileView}>
+                    {children}
+                </ModalComponent>
+            )}
         </>
     );
 };
