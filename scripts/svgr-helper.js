@@ -89,8 +89,8 @@ function generateImportsAndExports(destinationFile = './src/icons/list.tsx', fol
             ${imports}
             import { css } from '@emotion/react';
             import styled from '@emotion/styled';
-            import P from '../typography/P';
-            import Button from '../core/button';
+            import P from '@/typography/P';
+            import Button from '@/core/form-group/button';
 
             const SVGListContainer = styled.div(
                 () => css\`\

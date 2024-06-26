@@ -1,37 +1,43 @@
+import { terser } from 'rollup-plugin-minification';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
-import { terser } from 'rollup-plugin-minification';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-
+import jsonPlugin from '@rollup/plugin-json';
 import packageJson from './package.json' assert { type: 'json' };
 
-export default [
-    // Core bundle
+const createConfig = (input, outputDir) => [
     {
-        input: 'src/core/index.ts',
+        input,
         output: [
             {
-                file: 'dist/core/index.js',
+                file: `dist/${outputDir}/index.js`,
                 format: 'cjs',
                 sourcemap: true,
                 exports: 'named'
             },
             {
-                file: 'dist/core/index.esm.js',
+                file: `dist/${outputDir}/index.esm.js`,
                 format: 'esm',
                 sourcemap: true,
                 exports: 'named'
             }
         ],
-        plugins: [terser(), resolve(), commonjs(), typescript({ tsconfig: './tsconfig.json' }), peerDepsExternal()],
+        plugins: [peerDepsExternal(), resolve(), commonjs(), typescript({ tsconfig: './tsconfig.json' }), terser(), jsonPlugin()],
         external: Object.keys(packageJson.peerDependencies || {})
     },
     // Types
     {
-        input: 'src/core/index.ts',
-        output: [{ file: 'dist/core/index.d.ts', format: 'es' }],
+        input,
+        output: [{ file: `dist/${outputDir}/index.d.ts`, format: 'es' }],
         plugins: [dts()]
     }
+];
+
+export default [
+    ...createConfig('src/core/index.ts', 'core'),
+    ...createConfig('src/hooks/index.ts', 'hooks'),
+    ...createConfig('src/typography/index.ts', 'typography'),
+    ...createConfig('src/icons/index.ts', 'icons')
 ];
