@@ -41,7 +41,6 @@ export const AccordionContainer = styled.div<IAccordionContainer>(
 
             & > div {
                 padding-top: 20px;
-                padding-top: 20px;
                 line-height: 26px;
                 font-weight: 300;
             }

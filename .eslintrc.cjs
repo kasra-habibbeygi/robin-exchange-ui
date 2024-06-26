@@ -81,6 +81,6 @@ module.exports = {
         'no-new-wrappers': ['error'],
         'camelcase': ['error'],
         'new-cap': ['error'],
-        'no-undef': 'off',
+        'no-undef': 'off',        
     },
   };
