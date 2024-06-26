@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import PSample from '../../typography/body.sample';
+import PSample from '@/typography/body.sample';
 
 const meta: Meta<typeof PSample> = {
     component: PSample,

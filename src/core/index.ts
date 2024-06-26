@@ -1,11 +1,3 @@
-export { default as Button } from './button';
-export { default as Checkbox } from './checkbox';
-export { default as Radio } from './radio';
-export { default as Pagination } from './pagination';
-export { default as Tooltip } from './tooltip';
-export { default as Switch } from './switch';
-export { default as Textarea } from './textarea';
-export { default as Modal } from './modal';
-export { default as Accordion } from './accordion';
-export { default as Input } from './input';
-export { default as Menu } from './menu';
+export * from './data-display';
+export * from './form-group';
+export * from './navigation';

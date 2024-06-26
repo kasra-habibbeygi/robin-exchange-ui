@@ -3,7 +3,7 @@ import { FC, ReactNode, useEffect, useState } from 'react';
 
 // Assets
 import { AccordionContainer } from './accordion.style';
-import { Angle } from '../../icons/main';
+import { Angle } from '@/icons/main';
 
 // Types
 export interface IAccordion {

@@ -1,9 +1,9 @@
 import { FC, MouseEvent, ReactNode } from 'react';
+import { createPortal } from 'react-dom';
 
 // Assets
 import { ModalContainer } from './modal.style';
-import { createPortal } from 'react-dom';
-import useToggleModal from '../../hooks/useToggleModal';
+import useToggleModal from '@/hooks/useToggleModal';
 
 // Types
 interface IModal {

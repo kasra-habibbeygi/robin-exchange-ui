@@ -2,7 +2,7 @@
 import { MenuContainer } from './menu.style';
 
 // Hook
-import useOutsideClick from '../../hooks/useOutsideClick';
+import useOutsideClick from '@/hooks/useOutsideClick';
 
 const Menu = () => {
     const [menuState, setMenuState, menuRef] = useOutsideClick();

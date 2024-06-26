@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Textarea } from '../../core';
+import { Textarea } from '@/core/form-group';
 
 const meta: Meta<typeof Textarea> = {
     component: Textarea,

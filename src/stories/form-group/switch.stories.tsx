@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Switch } from '../../core';
+import { Switch } from '@/core/form-group';
 
 const meta: Meta<typeof Switch> = {
     component: Switch,

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import SVGList from '../icons/list';
+import SVGList from '@/icons/list';
 
 const meta: Meta<typeof SVGList> = {
     component: SVGList,

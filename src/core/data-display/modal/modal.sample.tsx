@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 // Components
-import Button from '../button';
+import Button from '@/core/form-group/button';
 import Modal from './modal';
 
 //Types

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Menu } from '../../core';
+import { Menu } from '@/core/data-display';
 
 const meta: Meta<typeof Menu> = {
     component: Menu,

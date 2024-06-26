@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import ModalSample from '../../core/modal/modal.sample';
+import ModalSample from '@/core/data-display/modal/modal.sample';
 
 const meta: Meta<typeof ModalSample> = {
     component: ModalSample,

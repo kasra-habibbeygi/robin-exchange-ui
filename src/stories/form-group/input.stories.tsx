@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Input } from '../../core';
+import { Input } from '@/core/form-group';
 
 const meta: Meta<typeof Input> = {
     component: Input,
