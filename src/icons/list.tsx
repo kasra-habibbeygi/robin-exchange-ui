@@ -1,4 +1,3 @@
-import Angle from './main/Angle';
 import BoldCheck from './main/BoldCheck';
 import BoldCross from './main/BoldCross';
 import BoldEnvelope from './main/BoldEnvelope';
@@ -6,10 +5,11 @@ import BoldHome from './main/BoldHome';
 import BoldMenuBurger from './main/BoldMenuBurger';
 import BoldSearch from './main/BoldSearch';
 import BoldUser from './main/BoldUser';
-import CheckCircle from './main/CheckCircle';
-import Cross from './main/Cross';
-import CrossCircle from './main/CrossCircle';
-import FileInfo from './main/FileInfo';
+import OutlineAngle from './main/OutlineAngle';
+import OutlineCheckCircle from './main/OutlineCheckCircle';
+import OutlineCross from './main/OutlineCross';
+import OutlineCrossCircle from './main/OutlineCrossCircle';
+import OutlineFileInfo from './main/OutlineFileInfo';
 
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
@@ -58,18 +58,8 @@ const SVGListContainer = styled.div(
 
 const AllIcons = () => (
     <SVGListContainer>
+        <h3>Bold Icons</h3>
         <ul>
-            <li
-                onClick={() => {
-                    navigator.clipboard.writeText('<Angle />');
-                }}
-            >
-                <Button variant='ghost'>
-                    <Angle />
-                    <P>Angle</P>
-                </Button>
-            </li>
-
             <li
                 onClick={() => {
                     navigator.clipboard.writeText('<BoldCheck />');
@@ -146,48 +136,61 @@ const AllIcons = () => (
                     <P>BoldUser</P>
                 </Button>
             </li>
-
+        </ul>
+        <h3>outline Icons</h3>
+        <ul>
             <li
                 onClick={() => {
-                    navigator.clipboard.writeText('<CheckCircle />');
+                    navigator.clipboard.writeText('<OutlineAngle />');
                 }}
             >
                 <Button variant='ghost'>
-                    <CheckCircle />
-                    <P>CheckCircle</P>
+                    <OutlineAngle />
+                    <P>OutlineAngle</P>
                 </Button>
             </li>
 
             <li
                 onClick={() => {
-                    navigator.clipboard.writeText('<Cross />');
+                    navigator.clipboard.writeText('<OutlineCheckCircle />');
                 }}
             >
                 <Button variant='ghost'>
-                    <Cross />
-                    <P>Cross</P>
+                    <OutlineCheckCircle />
+                    <P>OutlineCheckCircle</P>
                 </Button>
             </li>
 
             <li
                 onClick={() => {
-                    navigator.clipboard.writeText('<CrossCircle />');
+                    navigator.clipboard.writeText('<OutlineCross />');
                 }}
             >
                 <Button variant='ghost'>
-                    <CrossCircle />
-                    <P>CrossCircle</P>
+                    <OutlineCross />
+                    <P>OutlineCross</P>
                 </Button>
             </li>
 
             <li
                 onClick={() => {
-                    navigator.clipboard.writeText('<FileInfo />');
+                    navigator.clipboard.writeText('<OutlineCrossCircle />');
                 }}
             >
                 <Button variant='ghost'>
-                    <FileInfo />
-                    <P>FileInfo</P>
+                    <OutlineCrossCircle />
+                    <P>OutlineCrossCircle</P>
+                </Button>
+            </li>
+
+            <li
+                onClick={() => {
+                    navigator.clipboard.writeText('<OutlineFileInfo />');
+                }}
+            >
+                <Button variant='ghost'>
+                    <OutlineFileInfo />
+                    <P>OutlineFileInfo</P>
                 </Button>
             </li>
         </ul>

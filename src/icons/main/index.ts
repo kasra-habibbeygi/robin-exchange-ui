@@ -1,4 +1,3 @@
-export { default as Angle } from './Angle';
 export { default as BoldCheck } from './BoldCheck';
 export { default as BoldCross } from './BoldCross';
 export { default as BoldEnvelope } from './BoldEnvelope';
@@ -6,7 +5,8 @@ export { default as BoldHome } from './BoldHome';
 export { default as BoldMenuBurger } from './BoldMenuBurger';
 export { default as BoldSearch } from './BoldSearch';
 export { default as BoldUser } from './BoldUser';
-export { default as CheckCircle } from './CheckCircle';
-export { default as CrossCircle } from './CrossCircle';
-export { default as Cross } from './Cross';
-export { default as FileInfo } from './FileInfo';
+export { default as OutlineAngle } from './OutlineAngle';
+export { default as OutlineCheckCircle } from './OutlineCheckCircle';
+export { default as OutlineCross } from './OutlineCross';
+export { default as OutlineCrossCircle } from './OutlineCrossCircle';
+export { default as OutlineFileInfo } from './OutlineFileInfo';

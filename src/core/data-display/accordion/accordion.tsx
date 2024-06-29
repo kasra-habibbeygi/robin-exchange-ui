@@ -3,7 +3,7 @@ import { FC, ReactNode, useEffect, useState } from 'react';
 
 // Assets
 import { AccordionContainer } from './accordion.style';
-import { Angle } from '@/icons/main';
+import { OutlineAngle } from '@/icons/main';
 
 // Types
 export interface IAccordion {
@@ -38,7 +38,6 @@ const Accordion: FC<IAccordion> = ({ className, dataList, disabledKey, defaultEx
 
     useEffect(() => {
         if (defaultExpanded !== null) {
-            console.log(defaultExpanded);
             setActiveQuestionIndex(defaultExpanded);
             setHeight(document.getElementById(`value_text_${defaultExpanded}`)?.offsetHeight!);
         }
@@ -57,7 +56,7 @@ const Accordion: FC<IAccordion> = ({ className, dataList, disabledKey, defaultEx
                 >
                     <div onClick={() => onAccordionClickHandler(index)} className='title'>
                         {item.title}
-                        {typeof icon === 'boolean' ? <Angle /> : icon}
+                        {typeof icon === 'boolean' ? <OutlineAngle /> : icon}
                     </div>
                     <div className='content'>
                         <div id={`value_text_${index}`}>{item.content}</div>

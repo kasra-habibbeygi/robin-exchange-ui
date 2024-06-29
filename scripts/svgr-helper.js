@@ -29,7 +29,11 @@ function processFiles(folderPath) {
 
                         const updatedData =
                             '/* eslint-disable max-len */\n' +
-                            data.replace(/#000/g, 'currentColor').replaceAll(/import \* as React from "react";/g, '');
+                            data
+                                .replace(/#000/g, 'currentColor')
+                                .replaceAll(/import \* as React from "react";/g, '')
+                                .replaceAll('width="1em"', '')
+                                .replaceAll('height="1em"', '');
 
                         fs.writeFile(filePath, updatedData, 'utf8', err => {
                             if (err) {
@@ -63,25 +67,42 @@ function generateImportsAndExports(destinationFile = './src/icons/list.tsx', fol
         }
 
         let imports = '';
-        let components = '';
+        let boldIcons = '';
+        let outlineIcons = '';
 
         files.forEach(file => {
             const componentName = path.basename(file, path.extname(file));
 
             if (path.extname(file) === '.tsx') {
                 imports += `import ${componentName} from './main/${componentName}';\n`;
-                components += `  
-                    <li
-                        onClick={() => {
-                            navigator.clipboard.writeText('<${componentName} />');
-                        }}
-                    >
-                        <Button variant='ghost'>
-                            <${componentName} />
-                        <P>${componentName}</P>
-                        </Button>
-                    </li>
-                `;
+
+                if (componentName.includes('Bold')) {
+                    boldIcons += `  
+                        <li
+                            onClick={() => {
+                                navigator.clipboard.writeText('<${componentName} />');
+                            }}
+                        >
+                            <Button variant='ghost'>
+                                <${componentName} />
+                                <P>${componentName}</P>
+                            </Button>
+                        </li>
+                    `;
+                } else if (componentName.includes('Outline')) {
+                    outlineIcons += `  
+                        <li
+                            onClick={() => {
+                                navigator.clipboard.writeText('<${componentName} />');
+                            }}
+                        >
+                            <Button variant='ghost'>
+                                <${componentName} />
+                                <P>${componentName}</P>
+                            </Button>
+                        </li>
+                    `;
+                }
             }
         });
 
@@ -133,9 +154,16 @@ function generateImportsAndExports(destinationFile = './src/icons/list.tsx', fol
 
             const AllIcons = () => (
                 <SVGListContainer>
+                    <h3>Bold Icons</h3>
                     <ul>
-                        ${components}
+                        ${boldIcons}
                     </ul>
+                    <h3>outline Icons</h3>
+                    <ul>
+                        ${outlineIcons}
+                    </ul>
+                    
+                    
                 </SVGListContainer>
             );
             export default AllIcons;
