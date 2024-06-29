@@ -1,6 +1,6 @@
 {
-	"name": "react-vitale",
-	"version": "0.0.35",
+	"name": "robin-exchange-ui",
+	"version": "0.0.39",
 	"description": "A simple library for React components.",
 	"author": "Kasra Habibbeygi",
 	"license": "MIT",
