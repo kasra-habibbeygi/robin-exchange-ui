@@ -1,40 +1,38 @@
 import { css } from '@emotion/react';
-import styled from '@emotion/styled';
 import { Button } from '@mui/material';
+import styled from '@emotion/styled';
 
 export const ButtonContainer = styled(Button)(
-    () => css`
-        font-size: 14px;
-        font-weight: 500;
+    ({ theme }) => css`
+        font-size: ${theme.fontSizeBase};
+        font-weight: ${theme.fontWeightBase};
         padding: 6px 16px;
         display: flex;
         align-items: center;
         justify-content: center;
         min-height: 30px;
         height: 30px;
-        color: red;
-        font-weight: 400;
         text-transform: capitalize;
 
         &.filled {
             &.success-color {
                 color: white;
-                background-color: green;
+                background-color: ${theme.colorSuccess};
             }
 
             &.danger-color {
                 color: white;
-                background-color: red;
+                background-color: ${theme.colorDanger};
             }
 
             &.accent-color {
                 color: white;
-                background-color: #029cfd;
+                background-color: ${theme.colorAccent};
             }
 
             &.warn-color {
                 color: white;
-                background-color: #ff9900;
+                background-color: ${theme.colorWarning};
             }
         }
 
@@ -43,44 +41,44 @@ export const ButtonContainer = styled(Button)(
 
             &.success-color {
                 color: green;
-                border: 1px solid green;
+                border: 1px solid ${theme.colorSuccess};
 
                 .loader-field {
                     svg {
-                        color: green;
+                        color: ${theme.colorSuccess};
                     }
                 }
             }
 
             &.accent-color {
-                color: #029cfd;
-                border: 1px solid #029cfd;
+                color: ${theme.colorAccent};
+                border: 1px solid ${theme.colorAccent};
 
                 .loader-field {
                     svg {
-                        color: #029cfd;
+                        color: ${theme.colorAccent};
                     }
                 }
             }
 
             &.warn-color {
-                color: #ff9900;
-                border: 1px solid #ff9900;
+                color: ${theme.colorWarning};
+                border: 1px solid ${theme.colorWarning};
 
                 .loader-field {
                     svg {
-                        color: #ff9900;
+                        color: ${theme.colorWarning};
                     }
                 }
             }
 
             &.danger-color {
-                color: red;
-                border: 1px solid red;
+                color: ${theme.colorDanger};
+                border: 1px solid ${theme.colorDanger};
 
                 .loader-field {
                     svg {
-                        color: red;
+                        color: ${theme.colorDanger};
                     }
                 }
             }
@@ -90,61 +88,61 @@ export const ButtonContainer = styled(Button)(
             background-color: transparent;
 
             &.success-color {
-                color: green;
+                color: ${theme.colorSuccess};
 
                 .loader-field {
                     svg {
-                        color: green;
+                        color: ${theme.colorSuccess};
                     }
                 }
             }
 
             &.danger-color {
-                color: red;
+                color: ${theme.colorDanger};
 
                 .loader-field {
                     svg {
-                        color: red;
+                        color: ${theme.colorDanger};
                     }
                 }
             }
 
             &.accent-color {
-                color: #029cfd;
+                color: ${theme.colorAccent};
 
                 .loader-field {
                     svg {
-                        color: #029cfd;
+                        color: ${theme.colorAccent};
                     }
                 }
             }
 
             &.warn-color {
-                color: #ff9900;
+                color: ${theme.colorWarning};
 
                 .loader-field {
                     svg {
-                        color: #ff9900;
+                        color: ${theme.colorWarning};
                     }
                 }
             }
         }
 
         &.disabled {
-            opacity: 0.4;
+            opacity: 0.6;
             cursor: not-allowed;
         }
 
         &.normal-radius {
-            border-radius: 4px;
+            border-radius: ${theme.borderRadiusSmall};
         }
 
         &.rounded-radius {
-            border-radius: 500px;
+            border-radius: ${theme.borderRadiusRound};
         }
 
         &.sharp-radius {
-            border-radius: 0;
+            border-radius: ${theme.borderRadiusNone};
         }
 
         .loader-field {

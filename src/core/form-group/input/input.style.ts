@@ -2,30 +2,29 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 export const InputContainer = styled.div(
-    () => css`
+    ({ theme }) => css`
         width: 100%;
 
         input {
             width: 100%;
-            color: black;
+            color: ${theme.textPrimary};
             background-color: transparent;
-            border-radius: 50px;
             padding: 10px 12px;
             height: 38px;
             transition: all linear 0.1s;
-            font-weight: 400;
+            font-weight: ${theme.fontWeightBase};
             outline: none;
-            font-size: 14px;
+            font-size: ${theme.fontSizeBase};
             border: 1px solid transparent;
 
             :focus {
                 outline: none;
-                border: 1px solid #ffd335;
+                border: 1px solid ${theme.borderFocused};
             }
 
             &::placeholder {
-                color: #4b4b4b;
-                font-size: 14px;
+                color: ${theme.textSecondary};
+                font-size: ${theme.fontSizeBase};
             }
         }
 
@@ -44,11 +43,11 @@ export const InputContainer = styled.div(
         }
 
         .outline {
-            border: 1px solid #d9d9d9;
+            border: 1px solid ${theme.borderPrimary};
         }
 
         .normal-radius {
-            border-radius: 6px;
+            border-radius: ${theme.borderRadiusSmall};
         }
 
         .rounded-radius {
@@ -63,7 +62,7 @@ export const InputContainer = styled.div(
             color: #4b4b4b;
             margin-bottom: 4px;
             display: block;
-            font-size: 14px;
+            font-size: ${theme.fontSizeBase};
             width: 100%;
         }
     `

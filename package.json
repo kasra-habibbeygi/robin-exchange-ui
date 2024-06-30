@@ -1,6 +1,6 @@
 {
 	"name": "robin-exchange-ui",
-	"version": "0.0.39",
+	"version": "0.0.40",
 	"description": "A simple library for React components.",
 	"author": "Kasra Habibbeygi",
 	"license": "MIT",

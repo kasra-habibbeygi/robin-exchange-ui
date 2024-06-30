@@ -9,9 +9,9 @@ interface IAccordionContainer {
 }
 
 export const AccordionContainer = styled.div<IAccordionContainer>(
-    ({ contentHeight, lastOne, disabled, active }) => css`
+    ({ theme, contentHeight, lastOne, disabled, active }) => css`
         padding: 0 20px;
-        border-bottom: ${lastOne ? '' : '1px solid #e5e5e5'};
+        border-bottom: ${lastOne ? '' : `1px solid ${theme.borderPrimary}`};
         padding: 16px 0;
         opacity: ${disabled ? '0.5' : '1'};
         pointer-events: ${disabled ? 'none' : 'initial'};
@@ -23,6 +23,7 @@ export const AccordionContainer = styled.div<IAccordionContainer>(
             display: flex;
             align-items: center;
             justify-content: space-between;
+            color: ${theme.textPrimary};
 
             svg {
                 min-width: 20px;
@@ -42,7 +43,8 @@ export const AccordionContainer = styled.div<IAccordionContainer>(
             & > div {
                 padding-top: 20px;
                 line-height: 26px;
-                font-weight: 300;
+                color: ${theme.textSecondary};
+                font-weight: ${theme.fontWeightBase};
             }
         }
 
