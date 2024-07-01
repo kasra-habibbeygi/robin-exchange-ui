@@ -4,8 +4,8 @@ import Small from './Small';
 const Heading = () => {
     return (
         <>
-            <P>p. paragraph</P>
-            <Small>small. small content</Small>
+            <P>p. پاراگراف</P>
+            <Small>small. محتوای کوچک</Small>
         </>
     );
 };

@@ -8,12 +8,12 @@ import H6 from './H6';
 const Heading = () => {
     return (
         <>
-            <H1>h1. Heading</H1>
-            <H2>h2. Heading</H2>
-            <H3>h3. Heading</H3>
-            <H4>h4. Heading</H4>
-            <H5>h5. Heading</H5>
-            <H6>h6. Heading</H6>
+            <H1>h1. تگ هدینگ</H1>
+            <H2>h2. تگ هدینگ</H2>
+            <H3>h3. تگ هدینگ</H3>
+            <H4>h4. تگ هدینگ</H4>
+            <H5>h5. تگ هدینگ</H5>
+            <H6>h6. تگ هدینگ</H6>
         </>
     );
 };

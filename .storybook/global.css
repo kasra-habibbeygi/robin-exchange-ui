@@ -1,4 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@font-face {
+    font-family: 'Yekan Bakh';
+    src: url('./fonts/YekanBakhLight.ttf');
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: 'Yekan Bakh';
+    src: url('./fonts/YekanBakhRegular.ttf');
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: 'Yekan Bakh';
+    src: url('./fonts/YekanBakhMedium.ttf');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Yekan Bakh';
+    src: url('./fonts/YekanBakhBold.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Yekan Bakh';
+    src: url('./fonts/YekanBakhHeavy.ttf');
+    font-weight: 500;
+}
 
 @font-face {
     font-family: 'Product Sans';
@@ -47,7 +75,7 @@
 }
 
 body {
-    font-family: 'Product Sans';
+    font-family: 'Yekan Bakh' !important;
 }
 
 .direction-ltr {
@@ -63,5 +91,5 @@ body {
 }
 
 .font-fa {
-    font-family: 'Rubik';
+    font-family: 'Yekan Bakh' !important;
 }

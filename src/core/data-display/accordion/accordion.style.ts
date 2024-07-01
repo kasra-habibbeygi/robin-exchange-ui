@@ -11,7 +11,7 @@ interface IAccordionContainer {
 export const AccordionContainer = styled.div<IAccordionContainer>(
     ({ theme, contentHeight, lastOne, disabled, active }) => css`
         padding: 0 20px;
-        border-bottom: ${lastOne ? '' : `1px solid ${theme.borderPrimary}`};
+        border-bottom: ${lastOne ? '' : `1px solid ${theme.borderColorNormal}`};
         padding: 16px 0;
         opacity: ${disabled ? '0.5' : '1'};
         pointer-events: ${disabled ? 'none' : 'initial'};
@@ -23,7 +23,7 @@ export const AccordionContainer = styled.div<IAccordionContainer>(
             display: flex;
             align-items: center;
             justify-content: space-between;
-            color: ${theme.textPrimary};
+            color: ${theme.textActive};
 
             svg {
                 min-width: 20px;

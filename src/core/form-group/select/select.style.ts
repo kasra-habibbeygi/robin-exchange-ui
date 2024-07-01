@@ -7,7 +7,7 @@ export const SelectContainer = styled.div(
         position: relative;
 
         label {
-            color: ${theme.textPrimary};
+            color: ${theme.textActive};
             font-size: 14px;
             display: block;
             margin-bottom: 4px;
@@ -69,7 +69,7 @@ export const SelectContainer = styled.div(
                 li {
                     padding: 10px 12px;
                     border-radius: 4px;
-                    color: ${theme.textPrimary};
+                    color: ${theme.textActive};
                     font-size: 14px;
                     cursor: pointer;
                     transition: all linear 0.1s;
@@ -105,7 +105,7 @@ export const SelectContainer = styled.div(
                 width: 16px;
                 height: 16px;
                 cursor: pointer;
-                color: ${theme.colorDanger};
+                color: ${theme.colorError};
             }
         }
 
@@ -168,7 +168,7 @@ export const SelectDropDownContainer = styled.div<{ selectPosition: { width: num
                 li {
                     padding: 10px 12px;
                     border-radius: 4px;
-                    color: ${theme.textPrimary};
+                    color: ${theme.textActive};
                     font-size: 14px;
                     cursor: pointer;
                     transition: all linear 0.1s;

@@ -13,6 +13,6 @@ type Story = StoryObj<typeof Button>;
 export const Primary: Story = {
     name: 'Button',
     args: {
-        children: 'button'
+        children: 'ثبت نام در سایت'
     }
 };

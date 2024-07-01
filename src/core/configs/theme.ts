@@ -2,9 +2,17 @@ export const designToken = (mode: 'dark' | 'light', direction: 'rtl' | 'ltr') =>
     mode,
     direction,
 
-    fontFamily: 'Arial, sans-serif',
-    fontSizeBase: '14px',
-    fontWeightBase: '400',
+    fontFamily: 'Yekan Bakh',
+    fontSizeBase: '16px',
+    fontWeightBase: '500',
+
+    fontSizeH1: '36px',
+    fontSizeH2: '30px',
+    fontSizeH3: '24px',
+    fontSizeH4: '16px',
+    fontSizeH5: '14px',
+    fontSizeH6: '12px',
+    fontSizSmall: '14px',
 
     borderRadiusNone: '0px',
     borderRadiusSmall: '6px',
@@ -12,20 +20,22 @@ export const designToken = (mode: 'dark' | 'light', direction: 'rtl' | 'ltr') =>
     borderRadiusLarge: '12px',
     borderRadiusRound: '500px',
 
-    colorDanger: '#F6465D',
+    borderColorNormal: '#909090',
+    borderColorInActive: 'rgba(0, 0, 0, 0.38)',
+    borderColorFocused: '#5B3DF9',
+    borderColorHover: '#1E1E1E',
+
+    colorError: '#FB2424',
+    colorPrimary: '#5B3DF9',
     colorSuccess: '#089981',
     colorWarning: '#FCD535',
-    colorAccent: '#3772FF',
 
-    backgroundBase: mode === 'dark' ? '#141416' : '#FFFFFF',
-    backgroundSurface: mode === 'dark' ? '#1E1E1E' : '#F5F5F5',
-    backgroundInputBase: mode === 'dark' ? '#222630' : '#F0F0F0',
-    backgroundInputFocused: mode === 'dark' ? '#333B45' : '#FFFFFF',
+    backgroundBase: '#FFFFFF',
+    backgroundSurface: '#F5F5F5',
+    backgroundInputBase: '#F0F0F0',
+    backgroundInputFocused: '#FFFFFF',
 
-    textPrimary: mode === 'dark' ? '#FFFFFF' : '#000000',
-    textSecondary: mode === 'dark' ? '#9B9C9F' : '#4F4F4F',
-    textDisabled: mode === 'dark' ? '#6C6C6C' : '#A0A0A0',
-
-    borderPrimary: mode === 'dark' ? '#343434' : '#D0D0D0',
-    borderFocused: mode === 'dark' ? '#3772FF' : '#0056B3'
+    textActive: '#000000',
+    textInActive: '#5D5D5D',
+    textSecondary: '#6B6B6B'
 });

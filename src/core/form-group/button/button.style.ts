@@ -10,9 +10,10 @@ export const ButtonContainer = styled(Button)(
         display: flex;
         align-items: center;
         justify-content: center;
-        min-height: 30px;
-        height: 30px;
+        min-height: 48px;
+        height: 48px;
         text-transform: capitalize;
+        font-family: 'Yekan Bakh' !important;
 
         &.filled {
             &.success-color {
@@ -22,12 +23,12 @@ export const ButtonContainer = styled(Button)(
 
             &.danger-color {
                 color: white;
-                background-color: ${theme.colorDanger};
+                background-color: ${theme.colorError};
             }
 
             &.accent-color {
                 color: white;
-                background-color: ${theme.colorAccent};
+                background-color: ${theme.colorPrimary};
             }
 
             &.warn-color {
@@ -51,12 +52,12 @@ export const ButtonContainer = styled(Button)(
             }
 
             &.accent-color {
-                color: ${theme.colorAccent};
-                border: 1px solid ${theme.colorAccent};
+                color: ${theme.colorPrimary};
+                border: 1px solid ${theme.colorPrimary};
 
                 .loader-field {
                     svg {
-                        color: ${theme.colorAccent};
+                        color: ${theme.colorPrimary};
                     }
                 }
             }
@@ -73,12 +74,12 @@ export const ButtonContainer = styled(Button)(
             }
 
             &.danger-color {
-                color: ${theme.colorDanger};
-                border: 1px solid ${theme.colorDanger};
+                color: ${theme.colorError};
+                border: 1px solid ${theme.colorError};
 
                 .loader-field {
                     svg {
-                        color: ${theme.colorDanger};
+                        color: ${theme.colorError};
                     }
                 }
             }
@@ -98,21 +99,21 @@ export const ButtonContainer = styled(Button)(
             }
 
             &.danger-color {
-                color: ${theme.colorDanger};
+                color: ${theme.colorError};
 
                 .loader-field {
                     svg {
-                        color: ${theme.colorDanger};
+                        color: ${theme.colorError};
                     }
                 }
             }
 
             &.accent-color {
-                color: ${theme.colorAccent};
+                color: ${theme.colorPrimary};
 
                 .loader-field {
                     svg {
-                        color: ${theme.colorAccent};
+                        color: ${theme.colorPrimary};
                     }
                 }
             }
@@ -134,7 +135,7 @@ export const ButtonContainer = styled(Button)(
         }
 
         &.normal-radius {
-            border-radius: ${theme.borderRadiusSmall};
+            border-radius: ${theme.borderRadiusLarge};
         }
 
         &.rounded-radius {

@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable init-declarations */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-'use client';
 import { ChangeEvent, MouseEvent, ReactNode, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import isEqual from 'lodash/isEqual';

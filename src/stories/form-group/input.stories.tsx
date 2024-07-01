@@ -13,6 +13,6 @@ type Story = StoryObj<typeof Input>;
 export const Primary: Story = {
     name: 'Input',
     args: {
-        label: 'Email'
+        label: 'شماره موبایل'
     }
 };

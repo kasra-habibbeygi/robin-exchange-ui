@@ -7,19 +7,23 @@ export const InputContainer = styled.div(
 
         input {
             width: 100%;
-            color: ${theme.textPrimary};
+            color: ${theme.textActive};
             background-color: transparent;
-            padding: 10px 12px;
-            height: 38px;
+            padding: 16px 10px;
+            height: 56px;
             transition: all linear 0.1s;
-            font-weight: ${theme.fontWeightBase};
+            font-weight: 400;
             outline: none;
             font-size: ${theme.fontSizeBase};
             border: 1px solid transparent;
 
+            &:hover {
+                border: 1px solid ${theme.borderColorHover};
+            }
+
             :focus {
                 outline: none;
-                border: 1px solid ${theme.borderFocused};
+                border: 2px solid ${theme.borderColorFocused};
             }
 
             &::placeholder {
@@ -43,11 +47,11 @@ export const InputContainer = styled.div(
         }
 
         .outline {
-            border: 1px solid ${theme.borderPrimary};
+            border: 1px solid ${theme.borderColorNormal};
         }
 
         .normal-radius {
-            border-radius: ${theme.borderRadiusSmall};
+            border-radius: ${theme.borderRadiusLarge};
         }
 
         .rounded-radius {
