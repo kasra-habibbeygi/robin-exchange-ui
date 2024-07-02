@@ -13,6 +13,7 @@ type Story = StoryObj<typeof ModalSample>;
 export const Primary: Story = {
     name: 'Modal',
     args: {
-        maxWidth: [{ 'max-width: 1200px': '1000px' }, { 'max-width: 992px': '100%' }]
+        maxWidth: 'sm',
+        mobileView: '500px'
     }
 };

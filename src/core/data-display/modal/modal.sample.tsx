@@ -30,14 +30,16 @@ const Test = styled.div(
     `
 );
 
-const ModalSample: FC<IModalSample> = ({ maxWidth, blur, children }) => {
+const ModalSample: FC<IModalSample> = ({ maxWidth, blur, children, mobileView }) => {
     const [sampleStatus, setSampleStatus] = useState(false);
 
     return (
         <>
             <Button onClick={() => setSampleStatus(true)}>Modal Sample</Button>
-            <Modal maxWidth={maxWidth} onClose={() => setSampleStatus(false)} status={sampleStatus} blur={blur}>
-                <Test>This is the Modal Sample {children}</Test>
+            <Modal maxWidth={maxWidth} onClose={() => setSampleStatus(false)} status={sampleStatus} blur={blur} mobileView={mobileView}>
+                <Test>
+                    This is the Modal Sample {children} <p>a</p>
+                </Test>
             </Modal>
         </>
     );

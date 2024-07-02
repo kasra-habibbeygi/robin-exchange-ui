@@ -35,14 +35,11 @@ const ModalComponent: FC<IModal> = ({ children, maxWidth, onClose, status, blur 
         <>
             {status &&
                 createPortal(
-                    <ModalContainer
-                        status={modalStatus}
-                        maxWidth={maxWidth}
-                        onClick={handleClose}
-                        blurStatus={blur}
-                        mobileView={mobileView ?? null}
-                    >
-                        <div className='modal-body'>{children}</div>
+                    <ModalContainer status={modalStatus} maxWidth={maxWidth} blurStatus={blur} mobileView={mobileView ?? null}>
+                        <span className='back-layer' onClick={handleClose}></span>
+                        <div className='modal-body'>
+                            <div className='scroll-field'>{children}</div>
+                        </div>
                     </ModalContainer>,
                     document.body
                 )}
