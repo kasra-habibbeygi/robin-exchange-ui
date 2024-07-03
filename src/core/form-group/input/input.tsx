@@ -12,6 +12,7 @@ interface IInput {
     radius?: 'sharp' | 'rounded' | 'normal';
     className?: string;
     register: any;
+    error?: string;
 }
 
 const Input: FC<IInput> = ({
@@ -22,10 +23,11 @@ const Input: FC<IInput> = ({
     variant = 'outline',
     radius = 'normal',
     register,
+    error,
     ...props
 }) => {
     return (
-        <InputContainer className={`input-container ${className ? className : ''} ${disabled ? 'disabled' : ''}`}>
+        <InputContainer className={`input-container ${className ? className : ''} ${disabled ? 'disabled' : ''}`} error={!!error}>
             {/* {label && <label htmlFor={name}>{label}</label>} */}
             <input
                 className={`${variant} ${radius}-radius`}
@@ -35,6 +37,7 @@ const Input: FC<IInput> = ({
                 {...register}
                 {...props}
             />
+            <p className='error-field'>{error}</p>
         </InputContainer>
     );
 };

@@ -1,8 +1,8 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
-export const InputContainer = styled.div(
-    ({ theme }) => css`
+export const InputContainer = styled.div<{ error: boolean }>(
+    ({ theme, error }) => css`
         width: 100%;
 
         input {
@@ -18,7 +18,8 @@ export const InputContainer = styled.div(
             border: 1px solid transparent;
 
             &:hover {
-                border: 1px solid ${theme.borderColorHover};
+                border: 1px solid ${error ? theme.colorError : theme.borderColorHover};
+                border-width: ${error ? '2px' : '1px'};
             }
 
             :focus {
@@ -47,7 +48,8 @@ export const InputContainer = styled.div(
         }
 
         .outline {
-            border: 1px solid ${theme.borderColorNormal};
+            border: 1px solid ${error ? theme.colorError : theme.borderColorNormal};
+            border-width: ${error ? '2px' : '1px'};
         }
 
         .normal-radius {
@@ -68,6 +70,15 @@ export const InputContainer = styled.div(
             display: block;
             font-size: ${theme.fontSizeBase};
             width: 100%;
+        }
+
+        .error-field {
+            margin-top: 8px;
+            display: block;
+            padding-right: 10px;
+            color: ${theme.colorError};
+            font-weight: 300;
+            font-size: 14px;
         }
     `
 );
