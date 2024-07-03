@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable init-declarations */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ChangeEvent, MouseEvent, ReactNode, useEffect, useRef, useState } from 'react';
+import { MouseEvent, ReactNode, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import isEqual from 'lodash/isEqual';
 
@@ -9,7 +9,7 @@ import isEqual from 'lodash/isEqual';
 import { SelectContainer, SelectDropDownContainer } from './select.style';
 
 // Components
-import Input from '../input';
+// import Input from '../input';
 import { useOutsideClick, useWindowSize } from '@/hooks';
 import { OutlineAngle, OutlineCross } from '@/icons';
 
@@ -58,7 +58,7 @@ const Select: <T>({
     const dropDownRef = useRef<HTMLDivElement>(null);
     const [dropDownState, setDropDownState, ref] = useOutsideClick();
     const [optionsTemp, setOptionsTemp] = useState(options);
-    const [searchInputValue, setSearchInputValue] = useState('');
+    // const [searchInputValue, setSearchInputValue] = useState('');
     const [selectPosition, setSelectPosition] = useState({ top: 0, left: 0, width: 0 });
     const [isClient, setIsClient] = useState(false);
     const [width, height] = useWindowSize();
@@ -68,18 +68,18 @@ const Select: <T>({
         return isActiveRow ? 'active_row' : '';
     };
 
-    const onSearchHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        setSearchInputValue(e.target.value);
+    // const onSearchHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    //     setSearchInputValue(e.target.value);
 
-        if (e.target.value === '') {
-            setOptionsTemp(options);
-        } else {
-            const test = searchKeys?.map(searchKeysItem =>
-                options.filter(item => (item[searchKeysItem] as string).toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()))
-            );
-            setOptionsTemp(test![0]);
-        }
-    };
+    //     if (e.target.value === '') {
+    //         setOptionsTemp(options);
+    //     } else {
+    //         const test = searchKeys?.map(searchKeysItem =>
+    //             options.filter(item => (item[searchKeysItem] as string).toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()))
+    //         );
+    //         setOptionsTemp(test![0]);
+    //     }
+    // };
 
     const onRemoveHandler = (filteredOption: typeof options) => {
         if (returnOption === 'all') {
@@ -200,9 +200,8 @@ const Select: <T>({
                         ref={ref}
                     >
                         {searchKeys && (
-                            <div className='search_field'>
-                                <Input name='search' onChange={e => onSearchHandler(e)} value={searchInputValue} placeholder='Search' />
-                            </div>
+                            <div className='search_field'></div>
+                            // <Input name='search' onChange={e => onSearchHandler(e)} value={searchInputValue} placeholder='Search' />
                         )}
                         <ul>
                             {optionsTemp &&
