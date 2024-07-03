@@ -3,9 +3,9 @@ import { InputContainer } from './input.style';
 
 // Types
 interface IInput {
-    onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
-    value?: string | number;
-    name?: string;
+    onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+    value: string | number;
+    name: string;
     type?: 'text' | 'number' | 'password' | 'tel';
     label?: string;
     placeholder?: string;
@@ -40,8 +40,8 @@ const Input: FC<IInput> = ({
                 id={name}
                 name={name}
                 onChange={onChange}
-                value={newValue}
                 disabled={disabled}
+                {...(newValue && { value: newValue })}
                 {...props}
             />
         </InputContainer>
