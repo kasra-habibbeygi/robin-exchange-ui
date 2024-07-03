@@ -120,7 +120,7 @@ export const ModalContainer = styled.section<{
                 position: absolute;
                 bottom: 0;
                 min-height: 250px;
-                width: 100%;
+                width: 100% !important;
                 max-height: 80vh;
                 padding: 10px;
                 transition: all linear 0.2s;

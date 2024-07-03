@@ -3,9 +3,9 @@ import { InputContainer } from './input.style';
 
 // Types
 interface IInput {
-    onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-    value: string | number;
-    name: string;
+    onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+    value?: string | number;
+    name?: string;
     type?: 'text' | 'number' | 'password' | 'tel';
     label?: string;
     placeholder?: string;
@@ -25,7 +25,8 @@ const Input: FC<IInput> = ({
     name,
     disabled = false,
     variant = 'outline',
-    radius = 'normal'
+    radius = 'normal',
+    ...props
 }) => {
     const newValue = type === 'number' ? (value !== '' ? parseFloat(value as string).toLocaleString() : '') : value;
 
@@ -41,6 +42,7 @@ const Input: FC<IInput> = ({
                 onChange={onChange}
                 value={newValue}
                 disabled={disabled}
+                {...props}
             />
         </InputContainer>
     );
