@@ -132,6 +132,7 @@ export const ButtonContainer = styled(Button)(
         &.disabled {
             opacity: 0.6;
             cursor: not-allowed;
+            background-color: #818389 !important;
         }
 
         &.normal-radius {
