@@ -4,9 +4,10 @@ import styled from '@emotion/styled';
 
 // Components
 import Button from '@/core/form-group/button';
-import Modal, { ModalRef } from './modal';
+import Modal from './modal';
 
 // Types
+import { ModalRef } from './modal.type';
 interface IModalSample {
     children: ReactNode;
     maxWidth: 'xs' | 'sm' | { [key: `${'min' | 'max'}-width: ${string}`]: string }[];
