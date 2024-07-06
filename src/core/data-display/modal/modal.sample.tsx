@@ -1,22 +1,15 @@
-import { FC, ReactNode, useState } from 'react';
+import { FC, ReactNode, useRef, useState } from 'react';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 // Components
 import Button from '@/core/form-group/button';
-import Modal from './modal';
+import Modal, { ModalRef } from './modal';
 
-//Types
+// Types
 interface IModalSample {
     children: ReactNode;
-    /**
-     * You can set the size of the modal yourself by writing the key of the object
-     * as a media query and setting the value of the object to the size of the modal.
-     */
     maxWidth: 'xs' | 'sm' | { [key: `${'min' | 'max'}-width: ${string}`]: string }[];
-    /**
-     * When you set this prop, your modal will open from the bottom in responsive mode.
-     */
     mobileView?: `${string}px`;
     status: boolean;
     onClose: () => void;
@@ -32,14 +25,30 @@ const Test = styled.div(
 
 const ModalSample: FC<IModalSample> = ({ maxWidth, blur, children, mobileView }) => {
     const [sampleStatus, setSampleStatus] = useState(false);
+    const modalRef = useRef<ModalRef>(null);
+
+    const closeModal = () => {
+        if (modalRef.current) {
+            modalRef.current.close();
+        }
+    };
 
     return (
         <>
             <Button onClick={() => setSampleStatus(true)}>Modal Sample</Button>
+
             {sampleStatus && (
-                <Modal maxWidth={maxWidth} onClose={() => setSampleStatus(false)} status={sampleStatus} blur={blur} mobileView={mobileView}>
+                <Modal
+                    ref={modalRef}
+                    maxWidth={maxWidth}
+                    onClose={() => setSampleStatus(false)}
+                    status={sampleStatus}
+                    blur={blur}
+                    mobileView={mobileView}
+                >
                     <Test>
-                        This is the Modal Sample {children} <p>a</p>
+                        This is the Modal Sample {children}
+                        <button onClick={closeModal}>Close Modal</button>
                     </Test>
                 </Modal>
             )}

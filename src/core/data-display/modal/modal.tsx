@@ -1,4 +1,4 @@
-import { FC, MouseEvent, ReactNode, useEffect, useRef } from 'react';
+import { forwardRef, MouseEvent, ReactNode, useEffect, useImperativeHandle, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { useToggleModal } from '@/hooks';
 
@@ -11,18 +11,15 @@ interface IModal {
     status: boolean;
     onClose: () => void;
     blur?: boolean;
-    /**
-     * You can set the size of the modal yourself by writing the key of the object
-     * as a media query and setting the value of the object to the size of the modal.
-     */
     maxWidth: 'xs' | 'sm' | { [key: `${'min' | 'max'}-width: ${string}`]: string }[];
-    /**
-     * When you set this prop, your modal will open from the bottom in responsive mode.
-     */
     mobileView?: `${string}px`;
 }
 
-const ModalComponent: FC<IModal> = ({ children, maxWidth, onClose, status, blur = true, mobileView }) => {
+export interface ModalRef {
+    close: () => void;
+}
+
+const ModalComponent = forwardRef<ModalRef, IModal>(({ children, maxWidth, onClose, status, blur = true, mobileView }, ref) => {
     const [modalStatus, closeModal] = useToggleModal(status, onClose);
     const closeActionRef = useRef<HTMLDivElement | null>(null);
 
@@ -50,6 +47,12 @@ const ModalComponent: FC<IModal> = ({ children, maxWidth, onClose, status, blur 
         };
     }, [status]);
 
+    useImperativeHandle(ref, () => ({
+        close: () => {
+            closeModal();
+        }
+    }));
+
     return (
         <>
             {createPortal(
@@ -63,14 +66,14 @@ const ModalComponent: FC<IModal> = ({ children, maxWidth, onClose, status, blur 
             )}
         </>
     );
-};
+});
 
-const Modal: FC<IModal> = ({ children, maxWidth, onClose, status, blur = true, mobileView }) => {
+const Modal = forwardRef<ModalRef, IModal>(({ children, maxWidth, onClose, status, blur = true, mobileView }, ref) => {
     return (
-        <ModalComponent maxWidth={maxWidth} onClose={onClose} status={status} blur={blur} mobileView={mobileView}>
+        <ModalComponent maxWidth={maxWidth} onClose={onClose} status={status} blur={blur} mobileView={mobileView} ref={ref}>
             {children}
         </ModalComponent>
     );
-};
+});
 
 export default Modal;
