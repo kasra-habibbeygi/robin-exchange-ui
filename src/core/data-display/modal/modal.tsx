@@ -1,4 +1,4 @@
-import { forwardRef, MouseEvent, useEffect, useImperativeHandle, useRef } from 'react';
+import { forwardRef, MouseEvent, ReactNode, useEffect, useImperativeHandle, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { useToggleModal } from '@/hooks';
 
@@ -6,7 +6,18 @@ import { useToggleModal } from '@/hooks';
 import { ModalContainer } from './modal.style';
 
 // Types
-import { IModal, ModalRef } from './modal.type';
+interface IModal {
+    children: ReactNode;
+    status: boolean;
+    onClose: () => void;
+    blur?: boolean;
+    maxWidth: 'xs' | 'sm' | { [key: `${'min' | 'max'}-width: ${string}`]: string }[];
+    mobileView?: `${string}px`;
+}
+
+interface ModalRef {
+    close: () => void;
+}
 
 const ModalComponent = forwardRef<ModalRef, IModal>(({ children, maxWidth, onClose, status, blur = true, mobileView }, ref) => {
     const [modalStatus, closeModal] = useToggleModal(status, onClose);

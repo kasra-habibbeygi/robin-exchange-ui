@@ -7,7 +7,6 @@ import Button from '@/core/form-group/button';
 import Modal from './modal';
 
 // Types
-import { ModalRef } from './modal.type';
 interface IModalSample {
     children: ReactNode;
     maxWidth: 'xs' | 'sm' | { [key: `${'min' | 'max'}-width: ${string}`]: string }[];
@@ -23,6 +22,10 @@ const Test = styled.div(
         text-align: center;
     `
 );
+
+interface ModalRef {
+    close: () => void;
+}
 
 const ModalSample: FC<IModalSample> = ({ maxWidth, blur, children, mobileView }) => {
     const [sampleStatus, setSampleStatus] = useState(false);
