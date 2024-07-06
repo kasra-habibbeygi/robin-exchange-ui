@@ -14,13 +14,13 @@ interface IModalSample {
      * as a media query and setting the value of the object to the size of the modal.
      */
     maxWidth: 'xs' | 'sm' | { [key: `${'min' | 'max'}-width: ${string}`]: string }[];
-    status: boolean;
-    onClose: () => void;
-    blur?: boolean;
     /**
      * When you set this prop, your modal will open from the bottom in responsive mode.
      */
     mobileView?: `${string}px`;
+    status: boolean;
+    onClose: () => void;
+    blur?: boolean;
 }
 
 const Test = styled.div(
@@ -36,11 +36,13 @@ const ModalSample: FC<IModalSample> = ({ maxWidth, blur, children, mobileView })
     return (
         <>
             <Button onClick={() => setSampleStatus(true)}>Modal Sample</Button>
-            <Modal maxWidth={maxWidth} onClose={() => setSampleStatus(false)} status={sampleStatus} blur={blur} mobileView={mobileView}>
-                <Test>
-                    This is the Modal Sample {children} <p>a</p>
-                </Test>
-            </Modal>
+            {sampleStatus && (
+                <Modal maxWidth={maxWidth} onClose={() => setSampleStatus(false)} status={sampleStatus} blur={blur} mobileView={mobileView}>
+                    <Test>
+                        This is the Modal Sample {children} <p>a</p>
+                    </Test>
+                </Modal>
+            )}
         </>
     );
 };

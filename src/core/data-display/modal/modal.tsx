@@ -1,9 +1,9 @@
-import { FC, MouseEvent, ReactNode } from 'react';
+import { FC, MouseEvent, ReactNode, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
+import { useToggleModal } from '@/hooks';
 
 // Assets
 import { ModalContainer } from './modal.style';
-import useToggleModal from '@/hooks/useToggleModal';
 
 // Types
 interface IModal {
@@ -24,6 +24,7 @@ interface IModal {
 
 const ModalComponent: FC<IModal> = ({ children, maxWidth, onClose, status, blur = true, mobileView }) => {
     const [modalStatus, closeModal] = useToggleModal(status, onClose);
+    const closeActionRef = useRef<HTMLDivElement | null>(null);
 
     const handleClose = (event: MouseEvent<HTMLDivElement>) => {
         if (event.target === event.currentTarget) {
@@ -31,32 +32,44 @@ const ModalComponent: FC<IModal> = ({ children, maxWidth, onClose, status, blur 
         }
     };
 
+    const handleCloseActionClick = () => {
+        closeModal();
+    };
+
+    useEffect(() => {
+        const closeActionElement = document.getElementById('close-modal');
+        if (closeActionElement) {
+            closeActionRef.current = closeActionElement as HTMLDivElement;
+            closeActionRef.current.addEventListener('click', handleCloseActionClick);
+        }
+
+        return () => {
+            if (closeActionRef.current) {
+                closeActionRef.current.removeEventListener('click', handleCloseActionClick);
+            }
+        };
+    }, [status]);
+
     return (
         <>
-            {status &&
-                createPortal(
-                    <ModalContainer status={modalStatus} maxWidth={maxWidth} blurStatus={blur} mobileView={mobileView ?? null}>
-                        <span className='back-layer' onClick={handleClose}></span>
-                        <div className='modal-body'>
-                            <div className='scroll-field'>{children}</div>
-                        </div>
-                    </ModalContainer>,
-                    document.body
-                )}
+            {createPortal(
+                <ModalContainer status={modalStatus} maxWidth={maxWidth} blurStatus={blur} mobileView={mobileView ?? null}>
+                    <span className='back-layer' onClick={handleClose}></span>
+                    <div className='modal-body'>
+                        <div className='scroll-field'>{children}</div>
+                    </div>
+                </ModalContainer>,
+                document.body
+            )}
         </>
     );
 };
 
-// This component is for implementing conditional rendering, which is essential for improving performance.
 const Modal: FC<IModal> = ({ children, maxWidth, onClose, status, blur = true, mobileView }) => {
     return (
-        <>
-            {status && (
-                <ModalComponent maxWidth={maxWidth} onClose={onClose} status={status} blur={blur} mobileView={mobileView}>
-                    {children}
-                </ModalComponent>
-            )}
-        </>
+        <ModalComponent maxWidth={maxWidth} onClose={onClose} status={status} blur={blur} mobileView={mobileView}>
+            {children}
+        </ModalComponent>
     );
 };
 
