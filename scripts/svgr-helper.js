@@ -138,14 +138,14 @@ function generateImportsAndExports(destinationFile = './src/icons/list.tsx', fol
 
                             p {
                                 font-size: 14px;
-                                font-weight: 500;
+                                font-weight: 300;
                                 margin-top: 10px;
                                 color: black;
                             }
 
                             svg {
                                 color: black;
-                                width: 20px;
+                                width: 26px;
                                 height: auto;
                             }
                         }

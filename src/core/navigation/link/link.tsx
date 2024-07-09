@@ -10,8 +10,8 @@ interface LinkPropType extends Omit<LinkProps, 'to'> {
 const Link = forwardRef<HTMLAnchorElement, LinkPropType>((props, ref) => {
     const { href, children, to, ...linkProps } = props;
 
-    const hrefPath = href && href.startsWith('/') ? `${window.location.origin}/en${href}` : href;
-    const toPath = to && to.startsWith('/') ? `${window.location.origin}/en${to}` : to;
+    const hrefPath = href && href.startsWith('/') ? `${window.location.origin}/fa${href}` : href;
+    const toPath = to && to.startsWith('/') ? `${window.location.origin}/fa${to}` : to;
     const Element = href ? 'a' : ReactLink;
 
     return (

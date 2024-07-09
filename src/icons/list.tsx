@@ -1,15 +1,8 @@
-import BoldCheck from './main/BoldCheck';
-import BoldCross from './main/BoldCross';
-import BoldEnvelope from './main/BoldEnvelope';
-import BoldHome from './main/BoldHome';
-import BoldMenuBurger from './main/BoldMenuBurger';
-import BoldSearch from './main/BoldSearch';
-import BoldUser from './main/BoldUser';
 import OutlineAngle from './main/OutlineAngle';
-import OutlineCheckCircle from './main/OutlineCheckCircle';
-import OutlineCross from './main/OutlineCross';
-import OutlineCrossCircle from './main/OutlineCrossCircle';
-import OutlineFileInfo from './main/OutlineFileInfo';
+import OutlineChange from './main/OutlineChange';
+import OutlineHistory from './main/OutlineHistory';
+import OutlineTransfer from './main/OutlineTransfer';
+import OutlineWallet from './main/OutlineWallet';
 
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
@@ -41,14 +34,14 @@ const SVGListContainer = styled.div(
 
                 p {
                     font-size: 14px;
-                    font-weight: 500;
+                    font-weight: 300;
                     margin-top: 10px;
                     color: black;
                 }
 
                 svg {
                     color: black;
-                    width: 20px;
+                    width: 26px;
                     height: auto;
                 }
             }
@@ -59,84 +52,7 @@ const SVGListContainer = styled.div(
 const AllIcons = () => (
     <SVGListContainer>
         <h3>Bold Icons</h3>
-        <ul>
-            <li
-                onClick={() => {
-                    navigator.clipboard.writeText('<BoldCheck />');
-                }}
-            >
-                <Button variant='ghost'>
-                    <BoldCheck />
-                    <P>BoldCheck</P>
-                </Button>
-            </li>
-
-            <li
-                onClick={() => {
-                    navigator.clipboard.writeText('<BoldCross />');
-                }}
-            >
-                <Button variant='ghost'>
-                    <BoldCross />
-                    <P>BoldCross</P>
-                </Button>
-            </li>
-
-            <li
-                onClick={() => {
-                    navigator.clipboard.writeText('<BoldEnvelope />');
-                }}
-            >
-                <Button variant='ghost'>
-                    <BoldEnvelope />
-                    <P>BoldEnvelope</P>
-                </Button>
-            </li>
-
-            <li
-                onClick={() => {
-                    navigator.clipboard.writeText('<BoldHome />');
-                }}
-            >
-                <Button variant='ghost'>
-                    <BoldHome />
-                    <P>BoldHome</P>
-                </Button>
-            </li>
-
-            <li
-                onClick={() => {
-                    navigator.clipboard.writeText('<BoldMenuBurger />');
-                }}
-            >
-                <Button variant='ghost'>
-                    <BoldMenuBurger />
-                    <P>BoldMenuBurger</P>
-                </Button>
-            </li>
-
-            <li
-                onClick={() => {
-                    navigator.clipboard.writeText('<BoldSearch />');
-                }}
-            >
-                <Button variant='ghost'>
-                    <BoldSearch />
-                    <P>BoldSearch</P>
-                </Button>
-            </li>
-
-            <li
-                onClick={() => {
-                    navigator.clipboard.writeText('<BoldUser />');
-                }}
-            >
-                <Button variant='ghost'>
-                    <BoldUser />
-                    <P>BoldUser</P>
-                </Button>
-            </li>
-        </ul>
+        <ul></ul>
         <h3>outline Icons</h3>
         <ul>
             <li
@@ -152,45 +68,45 @@ const AllIcons = () => (
 
             <li
                 onClick={() => {
-                    navigator.clipboard.writeText('<OutlineCheckCircle />');
+                    navigator.clipboard.writeText('<OutlineChange />');
                 }}
             >
                 <Button variant='ghost'>
-                    <OutlineCheckCircle />
-                    <P>OutlineCheckCircle</P>
+                    <OutlineChange />
+                    <P>OutlineChange</P>
                 </Button>
             </li>
 
             <li
                 onClick={() => {
-                    navigator.clipboard.writeText('<OutlineCross />');
+                    navigator.clipboard.writeText('<OutlineHistory />');
                 }}
             >
                 <Button variant='ghost'>
-                    <OutlineCross />
-                    <P>OutlineCross</P>
+                    <OutlineHistory />
+                    <P>OutlineHistory</P>
                 </Button>
             </li>
 
             <li
                 onClick={() => {
-                    navigator.clipboard.writeText('<OutlineCrossCircle />');
+                    navigator.clipboard.writeText('<OutlineTransfer />');
                 }}
             >
                 <Button variant='ghost'>
-                    <OutlineCrossCircle />
-                    <P>OutlineCrossCircle</P>
+                    <OutlineTransfer />
+                    <P>OutlineTransfer</P>
                 </Button>
             </li>
 
             <li
                 onClick={() => {
-                    navigator.clipboard.writeText('<OutlineFileInfo />');
+                    navigator.clipboard.writeText('<OutlineWallet />');
                 }}
             >
                 <Button variant='ghost'>
-                    <OutlineFileInfo />
-                    <P>OutlineFileInfo</P>
+                    <OutlineWallet />
+                    <P>OutlineWallet</P>
                 </Button>
             </li>
         </ul>
