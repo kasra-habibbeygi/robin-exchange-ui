@@ -2,8 +2,15 @@
 
 import type { SVGProps } from 'react';
 const SvgOutlineUser = (props: SVGProps<SVGSVGElement>) => (
-    <svg xmlns='http://www.w3.org/2000/svg' fill='currentColor' viewBox='0 0 24 24' {...props}>
-        <path d='M12 12a6 6 0 1 0-6-6 6.006 6.006 0 0 0 6 6m0-10a4 4 0 1 1-4 4 4 4 0 0 1 4-4M12 14a9.01 9.01 0 0 0-9 9 1 1 0 0 0 2 0 7 7 0 0 1 14 0 1 1 0 0 0 2 0 9.01 9.01 0 0 0-9-9' />
+    <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' {...props}>
+        <path
+            stroke='currentColor'
+            strokeLinecap='round'
+            strokeLinejoin='round'
+            strokeWidth={1.5}
+            d='M20 20v-.75A4.25 4.25 0 0 0 15.75 15h-7.5A4.25 4.25 0 0 0 4 19.25V20'
+        />
+        <circle cx={12} cy={7} r={4} stroke='currentColor' strokeLinecap='round' strokeLinejoin='round' strokeWidth={1.5} />
     </svg>
 );
 export default SvgOutlineUser;
