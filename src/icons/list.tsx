@@ -1,7 +1,10 @@
 import OutlineAngle from './main/OutlineAngle';
+import OutlineBell from './main/OutlineBell';
 import OutlineChange from './main/OutlineChange';
 import OutlineHistory from './main/OutlineHistory';
+import OutlineMenu from './main/OutlineMenu';
 import OutlineTransfer from './main/OutlineTransfer';
+import OutlineUser from './main/OutlineUser';
 import OutlineWallet from './main/OutlineWallet';
 
 import { css } from '@emotion/react';
@@ -68,6 +71,17 @@ const AllIcons = () => (
 
             <li
                 onClick={() => {
+                    navigator.clipboard.writeText('<OutlineBell />');
+                }}
+            >
+                <Button variant='ghost'>
+                    <OutlineBell />
+                    <P>OutlineBell</P>
+                </Button>
+            </li>
+
+            <li
+                onClick={() => {
                     navigator.clipboard.writeText('<OutlineChange />');
                 }}
             >
@@ -90,12 +104,34 @@ const AllIcons = () => (
 
             <li
                 onClick={() => {
+                    navigator.clipboard.writeText('<OutlineMenu />');
+                }}
+            >
+                <Button variant='ghost'>
+                    <OutlineMenu />
+                    <P>OutlineMenu</P>
+                </Button>
+            </li>
+
+            <li
+                onClick={() => {
                     navigator.clipboard.writeText('<OutlineTransfer />');
                 }}
             >
                 <Button variant='ghost'>
                     <OutlineTransfer />
                     <P>OutlineTransfer</P>
+                </Button>
+            </li>
+
+            <li
+                onClick={() => {
+                    navigator.clipboard.writeText('<OutlineUser />');
+                }}
+            >
+                <Button variant='ghost'>
+                    <OutlineUser />
+                    <P>OutlineUser</P>
                 </Button>
             </li>
 
