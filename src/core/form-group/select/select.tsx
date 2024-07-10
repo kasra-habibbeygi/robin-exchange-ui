@@ -11,6 +11,7 @@ import { customStyles, SelectContainer } from './select.style';
 interface ISelect {
     control: any;
     label?: string;
+    name: string;
     defaultValue?: {
         value: string | number;
         label: string;
@@ -21,12 +22,12 @@ interface ISelect {
     }[];
 }
 
-const Select: FC<ISelect> = ({ control, options, label, defaultValue }) => {
+const Select: FC<ISelect> = ({ control, options, label, defaultValue, name }) => {
     return (
         <SelectContainer>
             <label>{label}</label>
             <Controller
-                name='phoneNumber'
+                name={name}
                 control={control}
                 defaultValue=''
                 render={({ field }) => (

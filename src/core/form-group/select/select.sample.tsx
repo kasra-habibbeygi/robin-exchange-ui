@@ -12,11 +12,9 @@ interface Inputs {
 }
 
 const SelectSample = () => {
-    const { control, watch } = useForm<Inputs>({ mode: 'onChange' });
+    const { control } = useForm<Inputs>({ mode: 'onChange' });
 
-    console.log(watch('phoneNumber'));
-
-    return <Select control={control} options={colourOptions} label='برای تست' />;
+    return <Select control={control} options={colourOptions} label='برای تست' name='phoneNumber' />;
 };
 
 export default SelectSample;
