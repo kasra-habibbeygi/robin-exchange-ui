@@ -1,44 +1,58 @@
-import Select from 'react-select';
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import ReactSelect from 'react-select';
+import { FC } from 'react';
+import { Controller } from 'react-hook-form';
 
-export interface ColourOption {
-    readonly value: string;
-    readonly label: string;
-    readonly color: string;
-    readonly isFixed?: boolean;
-    readonly isDisabled?: boolean;
+// Assets
+import { customStyles, SelectContainer } from './select.style';
+
+// type
+interface ISelect {
+    control: any;
+    label: string;
+    defaultValue?: {
+        value: string | number;
+        label: string;
+    } | null;
+    options: {
+        value: string | number;
+        label: string;
+    }[];
 }
 
-export const colourOptions: readonly ColourOption[] = [
-    { value: 'ocean', label: 'Ocean', color: '#00B8D9', isFixed: true },
-    { value: 'blue', label: 'Blue', color: '#0052CC', isDisabled: true },
-    { value: 'purple', label: 'Purple', color: '#5243AA' },
-    { value: 'red', label: 'Red', color: '#FF5630', isFixed: true },
-    { value: 'orange', label: 'Orange', color: '#FF8B00' },
-    { value: 'yellow', label: 'Yellow', color: '#FFC400' },
-    { value: 'green', label: 'Green', color: '#36B37E' },
-    { value: 'forest', label: 'Forest', color: '#00875A' },
-    { value: 'slate', label: 'Slate', color: '#253858' },
-    { value: 'silver', label: 'Silver', color: '#666666' }
-];
-
-const select = () => {
+const Select: FC<ISelect> = ({ control, options, label, defaultValue }) => {
     return (
-        <div>
-            <Select
-                className='basic-single'
-                classNamePrefix='select'
-                defaultValue={colourOptions[0]}
-                isDisabled={false}
-                isLoading={false}
-                isClearable={false}
-                isRtl
-                isSearchable={false}
-                name='color'
-                options={colourOptions}
-                onChange={e => console.log(e)}
+        <SelectContainer>
+            <label>{label}</label>
+            <Controller
+                name='phoneNumber'
+                control={control}
+                defaultValue=''
+                render={({ field }) => (
+                    <ReactSelect
+                        className='select-component'
+                        classNamePrefix='robin-select'
+                        isDisabled={false}
+                        defaultValue={defaultValue}
+                        isLoading={false}
+                        isClearable={false}
+                        isRtl
+                        isSearchable={false}
+                        options={options}
+                        placeholder=''
+                        menuPortalTarget={document.body}
+                        //@ts-ignore
+                        styles={customStyles}
+                        onChange={selectedOption => {
+                            field.onChange(selectedOption);
+                        }}
+                        value={options.find(option => option.value === field.value)}
+                    />
+                )}
             />
-        </div>
+        </SelectContainer>
     );
 };
 
-export default select;
+export default Select;

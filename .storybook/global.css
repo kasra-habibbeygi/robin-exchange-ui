@@ -93,3 +93,8 @@ body {
 .font-fa {
     font-family: 'Yekan Bakh' !important;
 }
+
+input {
+    font-family: 'Yekan Bakh' !important;
+    direction: rtl;
+}
