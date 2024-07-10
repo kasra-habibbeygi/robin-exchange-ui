@@ -55,9 +55,10 @@ export const customStyles: StylesConfig<OptionType, false> = {
         ...provided,
         backgroundColor: state.isSelected ? '#006EFF' : state.isFocused ? '#006EFF' : 'white',
         color: state.isSelected ? 'white' : state.isFocused ? 'white' : 'black',
-        padding: '10px 20px',
+        padding: '4px 20px',
         cursor: 'pointer',
         textAlign: 'right',
-        fontWeight: '300'
+        fontWeight: '300',
+        fontSize: '16px'
     })
 };
