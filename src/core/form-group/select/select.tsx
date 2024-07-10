@@ -10,7 +10,7 @@ import { customStyles, SelectContainer } from './select.style';
 // type
 interface ISelect {
     control: any;
-    label: string;
+    label?: string;
     defaultValue?: {
         value: string | number;
         label: string;

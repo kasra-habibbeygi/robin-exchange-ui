@@ -6,12 +6,15 @@ const colourOptions = [
     { value: '2', label: '2' },
     { value: '3', label: '3' }
 ];
+
 interface Inputs {
     phoneNumber: string;
 }
 
 const SelectSample = () => {
-    const { control } = useForm<Inputs>({ mode: 'onChange' });
+    const { control, watch } = useForm<Inputs>({ mode: 'onChange' });
+
+    console.log(watch('phoneNumber'));
 
     return <Select control={control} options={colourOptions} label='برای تست' />;
 };
