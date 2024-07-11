@@ -18,7 +18,7 @@ interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
     loading?: boolean;
     variant?: 'outline' | 'filled' | 'ghost';
     radius?: 'normal' | 'rounded' | 'sharp';
-    color?: 'success' | 'danger' | 'accent' | 'warn';
+    color?: 'accent';
     onClick?: () => void;
     className?: string;
     disabled?: boolean;

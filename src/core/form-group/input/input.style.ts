@@ -7,7 +7,7 @@ export const InputContainer = styled.div<{ error: boolean }>(
 
         input {
             width: 100%;
-            color: ${theme.textActive};
+            color: ${theme.textPrimary};
             background-color: transparent;
             padding: 16px 10px;
             height: 56px;
@@ -18,13 +18,13 @@ export const InputContainer = styled.div<{ error: boolean }>(
             border: 1px solid transparent;
 
             &:hover {
-                border: 1px solid ${error ? theme.colorError : theme.borderColorHover};
+                border: 1px solid ${error ? theme.textError70 : theme.borderActive};
                 border-width: ${error ? '2px' : '1px'};
             }
 
             :focus {
                 outline: none;
-                border: 2px solid ${theme.borderColorFocused};
+                border: 2px solid ${theme.borderActive};
             }
 
             &::placeholder {
@@ -48,12 +48,12 @@ export const InputContainer = styled.div<{ error: boolean }>(
         }
 
         .outline {
-            border: 1px solid ${error ? theme.colorError : theme.borderColorNormal};
+            border: 1px solid ${error ? theme.textError70 : theme.borderPrimary};
             border-width: ${error ? '2px' : '1px'};
         }
 
         .normal-radius {
-            border-radius: ${theme.borderRadiusLarge};
+            border-radius: ${theme.radiusMedium};
         }
 
         .rounded-radius {
@@ -76,7 +76,7 @@ export const InputContainer = styled.div<{ error: boolean }>(
             margin-top: 8px;
             display: block;
             padding-right: 10px;
-            color: ${theme.colorError};
+            color: ${theme.textError70};
             font-weight: 300;
             font-size: 14px;
         }

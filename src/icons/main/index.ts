@@ -1,3 +1,4 @@
+export { default as BoldCopy } from './BoldCopy';
 export { default as OutlineAngle } from './OutlineAngle';
 export { default as OutlineBell } from './OutlineBell';
 export { default as OutlineChange } from './OutlineChange';

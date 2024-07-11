@@ -16,70 +16,22 @@ export const ButtonContainer = styled(Button)(
         font-family: 'Yekan Bakh' !important;
 
         &.filled {
-            &.success-color {
-                color: white;
-                background-color: ${theme.colorSuccess};
-            }
-
-            &.danger-color {
-                color: white;
-                background-color: ${theme.colorError};
-            }
-
             &.accent-color {
                 color: white;
-                background-color: ${theme.colorPrimary};
-            }
-
-            &.warn-color {
-                color: white;
-                background-color: ${theme.colorWarning};
+                background-color: ${theme.surfaceBrand};
             }
         }
 
         &.outline {
             background-color: transparent;
 
-            &.success-color {
-                color: green;
-                border: 1px solid ${theme.colorSuccess};
-
-                .loader-field {
-                    svg {
-                        color: ${theme.colorSuccess};
-                    }
-                }
-            }
-
             &.accent-color {
-                color: ${theme.colorPrimary};
-                border: 1px solid ${theme.colorPrimary};
+                color: ${theme.textBrand};
+                border: 1px solid ${theme.borderActive};
 
                 .loader-field {
                     svg {
-                        color: ${theme.colorPrimary};
-                    }
-                }
-            }
-
-            &.warn-color {
-                color: ${theme.colorWarning};
-                border: 1px solid ${theme.colorWarning};
-
-                .loader-field {
-                    svg {
-                        color: ${theme.colorWarning};
-                    }
-                }
-            }
-
-            &.danger-color {
-                color: ${theme.colorError};
-                border: 1px solid ${theme.colorError};
-
-                .loader-field {
-                    svg {
-                        color: ${theme.colorError};
+                        color: ${theme.textBrand};
                     }
                 }
             }
@@ -88,42 +40,12 @@ export const ButtonContainer = styled(Button)(
         &.ghost {
             background-color: transparent;
 
-            &.success-color {
-                color: ${theme.colorSuccess};
-
-                .loader-field {
-                    svg {
-                        color: ${theme.colorSuccess};
-                    }
-                }
-            }
-
-            &.danger-color {
-                color: ${theme.colorError};
-
-                .loader-field {
-                    svg {
-                        color: ${theme.colorError};
-                    }
-                }
-            }
-
             &.accent-color {
-                color: ${theme.colorPrimary};
+                color: ${theme.textBrand};
 
                 .loader-field {
                     svg {
-                        color: ${theme.colorPrimary};
-                    }
-                }
-            }
-
-            &.warn-color {
-                color: ${theme.colorWarning};
-
-                .loader-field {
-                    svg {
-                        color: ${theme.colorWarning};
+                        color: ${theme.textBrand};
                     }
                 }
             }
@@ -136,15 +58,15 @@ export const ButtonContainer = styled(Button)(
         }
 
         &.normal-radius {
-            border-radius: ${theme.borderRadiusLarge};
+            border-radius: ${theme.radiusMedium};
         }
 
         &.rounded-radius {
-            border-radius: ${theme.borderRadiusRound};
+            border-radius: ${theme.radiusRound};
         }
 
         &.sharp-radius {
-            border-radius: ${theme.borderRadiusNone};
+            border-radius: ${theme.radiusNone};
         }
 
         .loader-field {

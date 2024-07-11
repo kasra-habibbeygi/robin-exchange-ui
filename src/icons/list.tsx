@@ -1,3 +1,4 @@
+import BoldCopy from './main/BoldCopy';
 import OutlineAngle from './main/OutlineAngle';
 import OutlineBell from './main/OutlineBell';
 import OutlineChange from './main/OutlineChange';
@@ -55,7 +56,18 @@ const SVGListContainer = styled.div(
 const AllIcons = () => (
     <SVGListContainer>
         <h3>Bold Icons</h3>
-        <ul></ul>
+        <ul>
+            <li
+                onClick={() => {
+                    navigator.clipboard.writeText('<BoldCopy />');
+                }}
+            >
+                <Button variant='ghost'>
+                    <BoldCopy />
+                    <P>BoldCopy</P>
+                </Button>
+            </li>
+        </ul>
         <h3>outline Icons</h3>
         <ul>
             <li

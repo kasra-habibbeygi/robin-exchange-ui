@@ -4,7 +4,7 @@ export const designToken = (mode: 'dark' | 'light', direction: 'rtl' | 'ltr') =>
 
     fontFamily: 'Yekan Bakh',
     fontSizeBase: '16px',
-    fontWeightBase: '500',
+    fontWeightBase: '300',
 
     fontSizeH1: '36px',
     fontSizeH2: '30px',
@@ -14,28 +14,28 @@ export const designToken = (mode: 'dark' | 'light', direction: 'rtl' | 'ltr') =>
     fontSizeH6: '12px',
     fontSizSmall: '14px',
 
-    borderRadiusNone: '0px',
-    borderRadiusSmall: '6px',
-    borderRadiusMedium: '8px',
-    borderRadiusLarge: '12px',
-    borderRadiusRound: '500px',
+    radiusNone: '0px',
+    radiusExtraSmall: '4px',
+    radiusSmall: '6px',
+    radiusMedium: '12px',
+    radiusLarge: '16px',
+    radiusExtraLarge: '28px',
+    radiusRound: '500px',
 
-    borderColorNormal: '#909090',
-    borderColorInActive: 'rgba(0, 0, 0, 0.38)',
-    borderColorFocused: '#5B3DF9',
-    borderColorHover: '#1E1E1E',
+    borderActive: '#0E73F9',
+    borderPrimary: '#A1A4AD',
 
-    colorError: '#FB2424',
-    colorPrimary: '#5B3DF9',
-    colorSuccess: '#089981',
-    colorWarning: '#FCD535',
+    textPrimary: '#000000',
+    textSecondary: '#737782',
+    textTertiary: '#A1A4AD',
+    textBrand: '#0E73F9',
+    textInvert: '#FFFFFF',
+    textError70: '#FF4F40',
 
-    backgroundBase: '#FFFFFF',
-    backgroundSurface: '#F5F5F5',
-    backgroundInputBase: '#F0F0F0',
-    backgroundInputFocused: '#FFFFFF',
+    surfacePrimary: '#FFFFFF',
+    surfaceDisabled: '#A1A4AD',
+    surfaceBrand: '#0E73F9',
 
-    textActive: '#000000',
-    textInActive: '#5D5D5D',
-    textSecondary: '#6B6B6B'
+    colorGray60: '#A1A4AD',
+    colorGray80: '#737782'
 });

@@ -72,10 +72,10 @@ export const ModalContainer = styled.section<{
             width: ${maxWidth === 'xs' ? '440px' : maxWidth === 'sm' && '600px'};
             animation: ${status ? FadeIn : FadeOut} 0.5s ease forwards;
             height: max-content;
-            background-color: #fff;
+            background-color: ${theme.surfacePrimary};
             position: relative;
             z-index: 1;
-            border-radius: ${theme.borderRadiusLarge};
+            border-radius: ${theme.radiusLarge};
             margin: auto;
             max-height: 100%;
             overflow: auto;
@@ -115,7 +115,7 @@ export const ModalContainer = styled.section<{
             }
 
             .modal-body {
-                border-radius: ${theme.borderRadiusLarge} ${theme.borderRadiusLarge} 0 0;
+                border-radius: ${theme.radiusLarge} ${theme.radiusLarge} 0 0;
                 margin: unset;
                 position: absolute;
                 bottom: 0;

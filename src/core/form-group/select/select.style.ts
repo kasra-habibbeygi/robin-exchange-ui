@@ -5,7 +5,7 @@ import { StylesConfig } from 'react-select';
 export const SelectContainer = styled.div(
     ({ theme }) => css`
         label {
-            color: #4b4b4b;
+            color: ${theme.textPrimary};
             margin-bottom: 4px;
             display: block;
             font-size: ${theme.fontSizeBase};
@@ -14,12 +14,12 @@ export const SelectContainer = styled.div(
 
         .robin-select__control {
             min-height: 56px;
-            border-radius: ${theme.borderRadiusLarge};
-            border: 1px solid ${theme.borderColorNormal};
+            border-radius: ${theme.radiusMedium};
+            border: 1px solid ${theme.borderPrimary};
         }
 
         .robin-select__control--is-focused {
-            border: 2px solid ${theme.borderColorFocused} !important;
+            border: 2px solid ${theme.borderActive} !important;
             box-shadow: none !important;
         }
 
@@ -53,12 +53,12 @@ export const customStyles: StylesConfig<OptionType, false> = {
 
     option: (provided, state) => ({
         ...provided,
-        backgroundColor: state.isSelected ? '#006EFF' : state.isFocused ? '#006EFF' : 'white',
+        backgroundColor: state.isSelected ? '#0E73F9' : state.isFocused ? '#0E73F9' : 'white',
         color: state.isSelected ? 'white' : state.isFocused ? 'white' : 'black',
         padding: '4px 20px',
         cursor: 'pointer',
         textAlign: 'right',
         fontWeight: '300',
-        fontSize: '16px'
+        fontSize: '14px'
     })
 };

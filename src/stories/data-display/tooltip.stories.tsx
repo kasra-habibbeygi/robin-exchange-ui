@@ -13,7 +13,7 @@ type Story = StoryObj<typeof Tooltip>;
 export const Primary: Story = {
     name: 'Tooltip',
     args: {
-        children: <b>Profile Information</b>,
-        title: 'Architecto aut veniam praesentium. Numquam dolorem iusto odio.Quaerat quia provident velit saepe praesentium veritatis.'
+        children: <b>اطلاعات پروفایل کاربری</b>,
+        title: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و '
     }
 };
